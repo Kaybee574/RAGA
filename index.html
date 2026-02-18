@@ -3,187 +3,33 @@
   <head>
     <title>RAGA Inc &copy;</title>
     <style>
-      /* Hides tab contents by default*/
-      .tab-content {
-        display: none;
+      .myframe
+      {
+        width: 100%;
+        border: none;
       }
 
-      /* Shows clicked-on tab*/
-      .tab-content:target {
-        display: block;
-      }
-
-      /* Keeps home tab visible when no tab is clicked-on*/
-      #home:target,
-      #home {
-        display: block;
-      }
-
-      /**/
-      #about-us:target ~ #home,
-      #contact:target ~ #home,
-      #sell:target ~ #home,
-      #categories:target ~ #home,
-      #browse:target ~ #home {
-        display: none;
+      .myMainFrame
+      {
+        width: 100%;
+        border: none;
+        height: 80vh;
       }
     </style>
   </head>
 
   <body>
-    <!--Tabs: must have Home, About, Contact, Sell, Categories and Browse
-    In the About us tab, add a photo of each member followed by a brief description of that member and their
-    set of skills to “your organisation”. In your paragraphing style make use of the <br /> tags.
-    Your home pages should explain what your organisation is about-->
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about-us">About Us</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#sell">Sell</a></li>
-        <li><a href="#categories">Categories</a></li>
-        <li><a href="#browse">Browse</a></li>
-      </ul>
-    </nav>
-    <main>
-      <section id="home" class="tab-content">
-        <h2>Welcome to RAGA Inc</h2>
-        <p>
-          RAGA Inc is a revolutionary online marketplace based in Rhodes
-          University, dedicated to connecting Rhodes University students who are
-          buyers and sellers in a seamless, secure environment. Our platform was
-          created by students for students.
-        </p>
-      </section>
+  <main>
+  <div>
+    <iframe src="Links.html" class="myframe"></iframe>
+  </div>
 
-      <section id="about-us" class="tab-content">
-        <h2>Meet our team</h2>
-        <p>We are a diverse group of students who are passionate about making student life better.<br>Here's who we are:<br /></p>
 
-        <article class="team-member">
-          <img
-            src="justin.jpg"
-            alt="Justin Mudimbu, Backend Lead"
-            width="300"
-            height="300"
-          />
-          <p>
-            <strong>Justin Mudimbu - Backend Lead</strong><br />
-            Justin architect our server-side infrastructure and APIs.<br />
-            Specializes in scalable system design and security
-            implementation.<br />
-            Ensures our platform remains robust and reliable.
-          </p>
-        </article>
+    <div>
+    <iframe src="home.html"  name = "mainFrame" class="myMainFrame" ></iframe>
+  </div>
 
-        <article class="team-member">
-          <img
-            src="charmaine.jpg"
-            alt="Charmaine Chikengezha, Database Architect"
-            width="300"
-            height="300"
-          />
-          <p>
-            <strong>Charmaine - Database Architect</strong><br />
-            Charmaine designs and optimizes our database structures.<br />
-            Expert in data modeling and query optimization.<br />
-            Ensures efficient data storage and retrieval for our growing
-            platform.
-          </p>
-        </article>
-
-        <article class="team-member">
-          <img src="nigel.jpg" alt="" width="300" height="300" />
-          <p>
-            <strong>Nigel Qongo - Frontend Lead</strong><br />
-            Nigel specializes in creating intuitive and responsive user
-            interfaces.<br />
-            Expert in HTML, CSS, and modern frontend frameworks.<br />
-            Focuses on delivering exceptional user experiences across all
-            devices.
-          </p>
-        </article>
-
-        <article class="team-member">
-          <img src="karabo.jpeg" alt="" width="300" height="300" />
-          <p>
-            <strong>Karabo Mgwenya - Full Stack Developer</strong><br />
-            Karabo leads our full stack development with expertise in both
-            frontend and backend technologies.<br />
-            Skilled in JavaScript, Python, and database management.<br />
-            Ensures seamless integration between user interface and server-side
-            functionality.
-          </p>
-        </article>
-      </section>
-
-      <section id="contact" class="tab-content">
-        <h2>Contact Us</h2>
-        <p>Get in touch with our team</p>
-        <ul>
-          <li>Email: <a href="mailto: "></a></li>
-          <li>Phone: +27 71 551 3628</li>
-          <li>
-            Follow us on<a
-              href="https://www.instagram.com/ru.thriftyyy?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-            >
-              Instagram</a
-            >
-          </li>
-        </ul>
-      </section>
-
-      <section id="sell" class="tab-content">
-        <h2>Start selling on RAGA</h2>
-        <p>Join other fellow Rhodes University Students on our platform.</p>
-        <p>
-          List your items for free and reach hundreds of potential buyers on
-          campus.
-        </p>
-      </section>
-
-      <section id="categories" class="tab-content">
-        <h2>Our Categories</h2>
-        <ul>
-          <li><strong>Textbooks & Academic Materials</strong></li>
-          <li><strong>Electronics</strong></li>
-          <li><strong>Fashion</strong></li>- Preloved fashion
-          <li><strong>Cosmetics</strong> - Beauty products and skincare</li>
-          <li><strong>Dorm & Furniture</strong> - Bedding, desks, chairs, and room decor</li>
-          <li><strong>Entertainment</strong></li>-
-        </ul>
-      </section>
-
-      <!--This section still needs some working on!!!!!-->
-      <section id="browse" class="tab-content">
-        <h2>Browse by Category</h2>
-        <ul>
-          <li>
-            <strong>Textbooks & Academic Materials</strong>- Find used
-            textbooks, study guides and academic resources from fellow students
-          </li>
-          <li>
-            <strong>Electronics</strong>- Laptops, phones, headphones and more at student friendly prices
-          </li>
-          <li><strong>Fashion</strong>- Clothing, shoes and accessories for every style</li>
-          <li>
-            <strong>Cosmetics</strong>- New and gently used beauty products
-          </li>
-          <li>
-            <strong>Dorm Essentials</strong>- Furniture, bedding, and decor for your residence room
-          </li>
-          <li>
-            <strong>Entertainment</strong>- Games, instruments, and gear for your free time
-          </li>
-        </ul>
-        <br />
-        <p><a href="#sell" class="highlight">Want to sell something? Click here!</a></p>
-      </section>
-    </main>
-
-    <!--A header and a footer to your index.html file. Your header should suggest or give an
-    idea of what your project is about. Your footer should at the very least contain copy rights
-    and the authors contact details-->
+  </main>
     <header>RAGA Inc &copy;</header>
     <footer>
       <p>
@@ -197,9 +43,7 @@
           Charmaine, email:<a href="mailto:chikengezhacharmaine@gmail.com">chikengezhacharmaine@gmail.com</a>
         </address>
       </p>
-      <!--<nav>
-        <a href="/about">About</a>
-      </nav>-->
+
     </footer>
   </body>
 </html>
