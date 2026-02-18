@@ -4,41 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        .reel {
-            display: flex;
-            justify-content: center;
-        }
-
-        .Reel_container {
-            display: flex;
-            padding: 20px;
-            justify-content: space-evenly;
-        }
-    </style>
+    <title>Document</title>
 </head>
 
 <body>
-    <h1>Sign In</h1>
+    <!--sign up form for RAGA-->
+    <h1>Sign Up</h1>
     <form action="" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name"><br><br>
         <label for="email">Email</label>
-
-        <input type="email" id="email" name="email"><br><br>
+        <input type="email" id="email" name="email"> @ru.ac.za<br><br>
         <label for="password">Password</label>
-
-        <input type="password" id="password" name="password"><br><br>
-        
+        <!--password must be at least 8 characters long and contain at least one uppercase letter and one number-->
+        <input type="password" id="password" name="password" minlength="8" maxlength="16" required
+            pattern="[A-Z][a-z]*[0-9]*" visibility="hidden">
         <label for="user_type">User Type</label>
-
         <select name="user_type" id="user_type">
             <option value="buyer">buyer</option>
             <option value="seller">seller</option>
-        </select><br><br>
-        <button type="submit">Sign In</button>
-        <a href="forgot_password.html">Forgot Password</a>
+        </select>
+        <button type="submit">Sign Up</button>
     </form>
-    <p>Don't have an account? <a href="SignUp.html">Sign Up</a></p>
-
+    <p>Already have an account? <a href="SignIn.html">Sign In</a></p>
 </body>
 
 </html>
