@@ -3,19 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--this ensures that the picture and about us info is displayed as seen on the website-->
     <style>
         .team-member
         {
             display: flex;
             padding: 20px;
             justify-content: space-evenly;
+            background-color: #eacdf6;
+        }
+
+        p{
+          background-color: #eacdf6;
         }
     </style>
 </head>
+      <!--this has information about each member of the team along with their picture-->
 <section id="about-us" class="tab-content">
         <h2>Meet our team</h2>
         <p>We are a diverse group of students who are passionate about making student life better.<br>Here's who we are:<br /></p>
 
+        <!--this inserts the picture of each team member along with the required measurements for the photo-->
         <article class="team-member">
           <img
             src="justin.jpg"
@@ -23,6 +31,8 @@
             width="300"
             height="300"
           />
+
+          <!--this paragraph explains a little bit about each team member and their role-->
           <p>
             <strong>Justin Mudimbu - Backend Lead</strong><br />
             Justin architect our server-side infrastructure and APIs.<br />
@@ -61,7 +71,7 @@
         </article>
 
         <article class="team-member">
-          <img src="karabo.jpeg" alt="" width="300" height="300" />
+          <img src="karabo.jpg" alt="" width="300" height="300" />
           <p>
             <strong>Karabo Mgwenya - Full Stack Developer</strong><br />
             Karabo leads our full stack development with expertise in both
