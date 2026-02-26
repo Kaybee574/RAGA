@@ -3,21 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      aside
+      {
+        width: 12%;
+        min-height: 100vh;
+        float: left;
+        background-color: aquamarine; 
+        
+        font-size: larger; 
+      }
+      main
+      {
+        width: 87%;
+        min-height: 100px;
+        float: right;
+      }
+      .MainBody
+      {
+        width: 100%;
+        min-height: 100vh;
+        
+        
+      }
+    </style>
 </head>
+<aside class="container">
 
-<!--this page wil have the links that will allow users to add their items that they
-wish to sell on the website-->
+  <a href="Sell_Pages/profile.html" target="frame1">Profile</a><br>
+  <a href="Sell_Pages/Pending.html" target="frame1">Pending orders</a><br>
+  <a href="Sell_Pages/History.html" target="frame1">History</a>
+</aside>  
+
 <body>
     <main>
+      <iframe class = "MainBody" name="frame1">
+      </iframe>  
 
-<section id="sell" class="tab-content">
-        <h2>Start selling on RAGA</h2>
-        <p>Join other fellow Rhodes University Students on our platform.</p>
-        <p>
-          List your items for free and reach hundreds of potential buyers on
-          campus.
-        </p>
-      </section>
+
+</section>
 
 </main>
 </body>

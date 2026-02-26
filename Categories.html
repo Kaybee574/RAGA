@@ -3,22 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+    <link rel="stylesheet" href="mainCss.css">
+  <style>
+        .category-card 
+        {
+        text-align: center;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        transition: all 0.3s;
+      }
+
+      .category-card:hover 
+      {
+        background-color: #eacdf6;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      @media screen and (max-width: 1200px) 
+      {
+        img 
+        {
+          height: 400px;
+          width: 400px;
+        }
+      }
+
+      @media screen and (max-width: 900px) 
+      {
+        img 
+        {
+          height: 300px;
+          width: 300px;
+        }
+      }
+
+      @media screen and (max-width: 600px) {
+        img {
+          height: 250px;
+          width: 250px;
+        }
+
+        .Categories {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+
+      .page-header 
+      {
+        text-align: center;
+        color: #ffaa50;
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+      }  
+    </style>
+  </head>
 <body>
     <main>
+      <header>
+        <!-- THIS DESIGN WAS INFLUENCED BY THE SUPERBALIST WEBSITE, I REFERENCED THEIR HEADER -->
+        <div class="myFoot">
+            <div class="top">
+              <h3>Raga</h3>
+              <input type="text" placeholder="Looking for..." class="search-input">
+              <button class="search-button">Go</button>
+              <a href="Cart.html"><img class = "icon" src="Icons/shopping-cart.png"></a>
+            </div>
+
+            <div class="bottom">
+          
+              <section class="links">
+                <a href="home.html" target="mainFrame">Home </a>
+              </section>
+
+              <section class="links">
+                <a href="AboutUs.html" target="mainFrame">About Us</a>
+              </section>
+            
+            <section class="links">
+                <a href="ContactUs.html" target="mainFrame">Contact</a>
+            </section>
+
+            <section class="links">
+                <a href="sell.html" target="mainFrame">Sell</a>
+            </section>
+            
+            <section class="links">
+                <a href="Categories.html" target="mainFrame">Categories</a>
+            </section>
+
+            <section class="links">
+                <a href="Explore.html" target="mainFrame">Explore</a>
+            </section>
+            
+            <section class="links">
+                <a href="Reviews.html" target="mainFrame">User reviews</a>            
+            </section>
+            <section class="links">
+                <a href="SignIn.html" target="mainFrame">Sign In</a>
+            </section>
+
+            <section class="links">
+                <a href="SignUp.html" target="mainFrame">Sign Up</a>
+            </section>
+            </div>
+        <div>
+      </header>
 
 <!--this sections lists the categories of items that will be available for sale on the website-->
-<section id="categories" class="tab-content">
-        <h2>Our Categories</h2>
-        <ul>
-          <li><strong>Textbooks & Academic Materials</strong> - Preloved Textbooks and study materials</li>
-          <li><strong>Electronics</strong></li>
-          <li><strong>Fashion</strong></li>
-          <li><strong>Cosmetics</strong> - Beauty products and skincare</li>
-          <li><strong>Dorm & Furniture</strong> - Bedding, desks, chairs, and room decor</li>
-          <li><strong>Entertainment</strong></li>
-        </ul>
-      </section>
+
+<br>
+<h1>How Can We Help you Today?</h1>
+<section>
+<section class="Categories">
+
+  <a href="category_pictures/textbooks.html">
+  <section class="item">
+    <img src="category_pictures/Textbooks.jpg"><br>
+    <p>Textbooks & Academic Materials</p>
+    
+  </section>
+  </a>
+
+  <a href="category_pictures/Electronics.html">
+<section class="item">
+    <img src="category_pictures/Electronics.jpg"><br>
+    <p>Electronics</p>
+  </section>  
+</a>
+</section><br>
+
+
+
+<section class="Categories">
+  <a href="category_pictures/Fashion.html">
+  <section class="item">
+    <img src="category_pictures/Fashion.jpg"><br>  
+    <p>Fashion</p>
+  </section>
+  </a>
+
+  <a href="category_pictures/Cosmetics.html">
+  <section class="item">
+
+    <img src="category_pictures/Cosmetics.jpg"><br>
+    <p>Cosmetics</p>
+  </section>  
+  </a>
+
+</section><br>  
+
+<section class="Categories">  
+    <a href="category_pictures/Furniture.html">
+    <section class="item">
+      <img src="category_pictures/Furniture.jpg"><br>
+          <p>Dorm & Furniture</p>
+    </section>  
+    </a>
+    
+    <a href="category_pictures/Others.html">
+    <section class="item">
+      <img src="category_pictures/Others.jpg"><br>
+      <p>Other</p>
+    </section>
+    </a>
+    </section>  
+  
+</section>  
+
 
 </main>
 </body>
