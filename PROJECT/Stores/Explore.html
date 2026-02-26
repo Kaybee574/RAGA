@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Explore Products - RAGA Inc</title>
+    <style>
+      aside {
+        width: 12%;
+        min-height: 100vh;
+        float: left;
+        background-color: aquamarine;
+        font-size: larger;
+        padding: 15px;
+        box-sizing: border-box;
+      }
+
+      main {
+        width: 87%;
+        min-height: 100px;
+        float: right;
+      }
+
+      .MainBody {
+        width: 100%;
+        min-height: 100vh;
+        border: none;
+      }
+
+      select,
+      label {
+        font-size: large;
+      }
+
+      section {
+        padding: 5px;
+      }
+
+      .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+
+      .filter-section {
+        margin-bottom: 20px;
+      }
+
+      .filter-section a {
+        display: block;
+        padding: 10px;
+        color: #333;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+      }
+
+      .filter-section a:hover {
+        background-color: #ffaa50;
+        color: white;
+      }
+
+      @media screen and (max-width: 768px) {
+        aside {
+          width: 100%;
+          float: none;
+          min-height: auto;
+        }
+
+        main {
+          width: 100%;
+          float: none;
+        }
+
+        .filter-section a {
+          display: inline-block;
+          margin-right: 10px;
+        }
+      }
+
+      aside h2 {
+        color: #333;
+        border-bottom: 2px solid #ffaa50;
+        padding-bottom: 5px;
+      }
+      .clearfix
+      {
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+
+  <section class="clearfix">
+    <nav class="container" aria-label="Product filters">
+      <h2>Filter by Categories</h2>
+
+      <!-- THE IDEA DID NOT WORK!!!!!! -->
+      <section class="filter-section">
+        <a href="category_pictures/textbooks.html" target="frame2"
+          >Textbooks</a
+        >
+      </section>
+
+      <section class="filter-section">
+        <a href="category_pictures/Electronics.html" target="frame2"
+          >Electronics</a
+        >
+      </section>
+
+      <section class="filter-section">
+        <a href="category_pictures/Fashion.html" target="frame2">Fashion</a>
+      </section>
+
+      <section class="filter-section">
+        <a href="category_pictures/Cosmetics.html" target="frame2">Cosmetics</a>
+      </section>
+
+      <section class="filter-section">
+        <a href="category_pictures/Furniture.html" target="frame2">Furniture</a>
+      </section>
+
+      <section class="filter-section">
+        <a href="category_pictures/Others.html" target="frame2">Others</a>
+      </section>
+
+      <section class="filter-section">
+        <a href="category_pictures/Others.html" target="frame2">View All</a>
+      </section>
+    </nav>
+    </section>
+  </body>
+</html>
