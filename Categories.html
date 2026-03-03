@@ -1,25 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categories - RAGA Inc</title>
+  <link rel="stylesheet" href="global.css">
+  <script src="script.js" defer></script>
 </head>
-<body>
-    <main>
 
+<body style="background-color: transparent;">
+  <main class="page-container">
+    <section id="categories">
+      <h2>Browse Our Categories</h2>
+      <p style="text-align: center;">Find exactly what you need using our categorized listings below.</p>
 
-<section id="categories" class="tab-content">
-        <h2>Our Categories</h2>
-        <ul>
-          <li><strong>Textbooks & Academic Materials</strong></li>
-          <li><strong>Electronics</strong></li>
-          <li><strong>Fashion</strong></li>
-          <li><strong>Cosmetics</strong> - Beauty products and skincare</li>
-          <li><strong>Dorm & Furniture</strong> - Bedding, desks, chairs, and room decor</li>
-          <li><strong>Entertainment</strong></li>
-        </ul>
-      </section>
+      <!-- Ordered List Requirement -->
+      <h3>Top 3 Active Categories</h3>
+      <ol style="margin-left: 40px; margin-bottom: 20px;">
+        <li>Textbooks & Academic Materials</li>
+        <li>Electronics (Laptops, Chargers, Accessories)</li>
+        <li>Fashion (RU Thrifty, Clothing, Shoes)</li>
+      </ol>
 
-</main>
+      <!-- Table Requirement 1 -->
+      <div class="table-wrapper">
+        <table class="custom-table"
+          summary="A table listing product categories, their descriptions, and the number of active listings.">
+          <thead>
+            <tr>
+              <th>Category Name</th>
+              <th>Description</th>
+              <th>Active Listings</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Textbooks</strong></td>
+              <td>Course materials and notes.</td>
+              <td>120+</td>
+            </tr>
+            <tr>
+              <td><strong>Electronics</strong></td>
+              <td>Gadgets, phones, calculators.</td>
+              <td>85</td>
+            </tr>
+            <tr>
+              <td><strong>Fashion</strong></td>
+              <td>Vintage and modern apparel.</td>
+              <td>200+</td>
+            </tr>
+            <tr>
+              <td><strong>Cosmetics</strong></td>
+              <td>Beauty products and skincare.</td>
+              <td>40</td>
+            </tr>
+            <tr>
+              <td><strong>Dorm & Furniture</strong></td>
+              <td>Bedding, desks, chairs.</td>
+              <td>65</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </section>
+  </main>
 </body>
-</html>      
+
+</html>

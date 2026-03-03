@@ -1,49 +1,56 @@
-<!doctype html>
-<html>
-  <head>
-    <title>RAGA Inc &copy;</title>
-    <style>
-      .myframe
-      {
-        width: 100%;
-        border: none;
-      }
+<!DOCTYPE html>
+<html lang="en">
 
-      .myMainFrame
-      {
-        width: 100%;
-        border: none;
-        height: 80vh;
-      }
-    </style>
-  </head>
+<head>
+  <!-- Viewport meta tag is essential for mobile-first responsive design -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAGA Inc. - Buy and Sell Student Marketplace</title>
 
-  <body>
-  <main>
-  <div>
-    <iframe src="Links.html" class="myframe"></iframe>
-  </div>
+  <!-- Add our global stylesheet -->
+  <link rel="stylesheet" href="global.css">
 
+  <style>
+    /* Prevent double scrollbars on the main wrapping page, ensure only iframe scrolls */
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden !important;
+    }
+  </style>
 
-    <div>
-    <iframe src="home.html"  name = "mainFrame" class="myMainFrame" ></iframe>
-  </div>
+  <!-- Add Javascript logic -->
+  <script src="script.js" defer></script>
+</head>
 
+<body>
+
+  <!-- Semantic Header and Nav -->
+  <header class="navbar">
+    <div class="nav-brand">RAGA Inc.</div>
+    <nav>
+      <!-- Unordered List for Navigation Links -->
+      <ul class="nav-links">
+        <li><a href="home.html" target="mainFrame" id="navHome">Home</a></li>
+        <li><a href="Explore.html" target="mainFrame" id="navExplore">Explore Feed</a></li>
+        <li><a href="Categories.html" target="mainFrame" id="navCategories">Categories</a></li>
+        <li><a href="sell.html" target="mainFrame" id="navSell">Sell Item</a></li>
+        <li><a href="AboutUs.html" target="mainFrame" id="navAbout">About Us</a></li>
+        <li><a href="ContactUs.html" target="mainFrame" id="navContact">Contact</a></li>
+        <li><a href="Reviews.html" target="mainFrame" id="navReviews">Reviews</a></li>
+        <li><a href="SignIn.html" target="mainFrame" id="navLogin">Login / Sign Up</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Semantic Main Wrapper -->
+  <main class="app-container main-content">
+    <!-- Using iframe to switch "tabs" seamlessly inside the dashboard without refreshing header -->
+    <iframe src="home.html" name="mainFrame" class="iframe-view" title="Main Application View"></iframe>
   </main>
-    <header>RAGA Inc &copy;</header>
-    <footer>
-      <p>
-        <p><strong>Copyright &copy; 2026 RAGA Inc.</strong> All rights reserved.</p>
-        <br />
-        <strong>Authors' Contact Details:</strong><br />
-        <address>
-          Karabo Mgwenya, email:<a href="mailto:karabomgwenya@yahoo.com">karabomgwenya@yahoo.com</a><br />
-          Nigel Qongo, email:<a href="mailto:stumpkitunathi@gmail.com">stumpkitunathi@gmail.com</a><br />
-          Justin Mudimbu, email:<a href="mailto:youngx997@gmail.com">youngx997@gmail.com</a><br />
-          Charmaine, email:<a href="mailto:chikengezhacharmaine@gmail.com">chikengezhacharmaine@gmail.com</a>
-        </address>
-      </p>
 
-    </footer>
-  </body>
+</body>
+
 </html>

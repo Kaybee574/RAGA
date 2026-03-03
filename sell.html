@@ -1,21 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sell an Item - RAGA Inc</title>
+  <link rel="stylesheet" href="global.css">
+  <script src="script.js" defer></script>
 </head>
-<body>
-    <main>
 
-<section id="sell" class="tab-content">
-        <h2>Start selling on RAGA</h2>
-        <p>Join other fellow Rhodes University Students on our platform.</p>
-        <p>
-          List your items for free and reach hundreds of potential buyers on
-          campus.
-        </p>
-      </section>
+<body style="background-color: transparent;">
+  <main class="page-container">
+    <section id="sell">
+      <h2>List an Item on RAGA</h2>
+      <p style="text-align: center;">Join other fellow Rhodes University Students on our platform.<br>
+        List your items securely and reach hundreds of potential buyers on campus.</p>
 
-</main>
+      <form class="marketplace-form" action="#" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="item-title">Item Title</label>
+          <input type="text" id="item-title" name="item_title" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="item-category">Category</label>
+          <select id="item-category" name="category" class="form-control" required>
+            <option value="textbooks">Textbooks</option>
+            <option value="electronics">Electronics</option>
+            <option value="fashion">Fashion</option>
+            <option value="dorm">Dorm & Furniture</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="price">Price (ZAR)</label>
+          <input type="number" id="price" name="price" class="form-control" min="0" step="1" required>
+        </div>
+        <div class="form-group">
+          <label for="image">Upload Image</label>
+          <input type="file" id="image" name="image" class="form-control" accept="image/*" required>
+        </div>
+        <button type="submit" class="btn">List Item</button>
+      </form>
+
+      <!-- Table Requirement 3 -->
+      <h3 style="margin-top: 40px;">Selling Fees Structure</h3>
+      <div class="table-wrapper">
+        <table class="custom-table" summary="Fee structure based on item price.">
+          <thead>
+            <tr>
+              <th>Item Price Range (ZAR)</th>
+              <th>Platform Fee</th>
+              <th>Listing Duration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>R0 - R500</td>
+              <td>Free</td>
+              <td>14 Days</td>
+            </tr>
+            <tr>
+              <td>R501 - R2000</td>
+              <td>5% Commission</td>
+              <td>30 Days</td>
+            </tr>
+            <tr>
+              <td>R2000+</td>
+              <td>Flat R100 Fee</td>
+              <td>60 Days</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </section>
+  </main>
 </body>
+
 </html>
