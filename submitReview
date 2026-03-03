@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .tab_content
+    {
+      border: 1px solid black;
+    }  
+
+    button
+    {
+      font-size: larger;
+    }
+  </style>
+  </head>
+<body>
+    <main>
+<label for="name">Name:</label>
+<input type="text" id="name" name="name" placeholder="Enter your name">
+
+        
+
+  </section>
+
+</main>
+</body>
+</html>
