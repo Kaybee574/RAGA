@@ -58,6 +58,7 @@
             text-align: center;
             transition: all 0.3s;
             height: 100%;
+            max-width: 100%;
             display: flex;
             flex-direction: column;
         }
@@ -97,13 +98,13 @@
             margin-bottom: 20px;
         }
 
-        .top {
+/*         .top {
             display: flex;
             align-items: center;
             gap: 15px;
             flex-wrap: wrap;
             margin-bottom: 15px;
-        }
+        } */
 
         .top h3 {
             font-size: 2rem;
@@ -120,7 +121,7 @@
       width: 750px;
     }
 
-        .search-input:focus {
+/*         .search-input:focus {
             outline: none;
             border-color: #ffaa50;
         }
@@ -135,7 +136,7 @@
             font-weight: bold;
             font-size: 1rem;
             transition: background-color 0.3s;
-        }
+        } */
 
         .search-button:hover {
             background-color: #ff9900;
@@ -174,7 +175,7 @@
         .links a:hover 
         {
             
-            background-color: #ffaa50;
+            background-color: white;
         }
 
         /* Responsive breakpoints */

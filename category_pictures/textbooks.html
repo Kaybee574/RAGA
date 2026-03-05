@@ -6,7 +6,18 @@
     <link rel="stylesheet" href="textbooks.css">
     <link rel="stylesheet" href="../mainCss.css">
     <style>
-
+        .top 
+        {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            max-width: 100%;
+        }
+        .textbook-page-figures{
+            width:max-content;
+            gap:100px;
+        }
     </style>
 </head>
 <body>
@@ -56,20 +67,20 @@
             <h1>TextBooks</h1>
 
             <section class="textbookMainSection">
-                <article class="Textbooks">
+                <article class="textbook-page-figures">
                     <a href="Books/48Laws.html">
                         <figure class="details">
-                            <img src="Books/Book1.webp" alt="48 Laws of Power Book">
+                            <img src="Books/Book1.webp" alt="48 Laws of Power Book" class="bookPic">
                             <figcaption>48 Laws of Power Book</figcaption>
                             <figcaption>Price: R200</figcaption>                                
                         </figure>    
                     </a>    
                 </article>    
 
-                <article class="Textbooks">
+                <article class="textbook-page-figures">
                     <a href="Books/macbeth.html">    
                         <figure class="details">
-                            <img src="Books/macB.webp" alt="Macbeth">
+                            <img src="Books/macB.webp" alt="Macbeth" class="bookPic">
                             <figcaption>Macbeth</figcaption>
                             <figcaption>Price: R200</figcaption>                                
                         </figure>    
