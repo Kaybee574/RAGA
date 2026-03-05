@@ -3,7 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     <style>
+      h1
+      {
+        display: flex;
+        justify-content: center;
+      }
+      .myNav
+      {
+        display: grid;
+        justify-content: center;
+      }
+      body
+      {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      }
+      button
+      {
+        height: auto;
+        width: 300px;
+        border-radius: 8px;
+
+      }
+
+      button a{
+        text-decoration: none;
+      }
+
       .tab_content {
         border: 1px solid black;
         padding: 20px;
@@ -37,7 +64,8 @@
 
       <h1>Here are some reviews of some buyers/sellers who have used RAGA</h1>
 
-      <nav aria-label="Review actions">
+      <nav aria-label="Review actions" class="myNav">
+      
         <button type="button">
           <a href="submitReview.html">Add your Own Review</a>
         </button>
