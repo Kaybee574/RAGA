@@ -1,0 +1,36 @@
+/* body */
+body {
+    background-color: rgb(188, 173, 230);
+}
+
+/* h1 */
+h1 {
+    color: white;
+    text-align: center;
+}
+
+/* paragraph */
+p {
+    font-family: verdana;
+    font-size: 20px;
+}
+
+/* button */
+.button {
+    background-color: #ddd;
+    border: none;
+    color: black;
+    text-align: center;
+    transition: 0.3s;
+}
+
+/* button hover */
+.button-hover {
+    background-color: rgb(14, 90, 253);
+    color: white;
+}
+
+/* center text */
+.center {
+    text-align: center;
+}
