@@ -3,22 +3,365 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mainCss.css">
+    <style>
+        /* Responsive Styles */
+        .category-card 
+        {
+            text-align: center;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .category-card:hover 
+        {
+            background-color: #ffaa50;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .page-header 
+        {
+            text-align: center;
+            color: #ffaa50;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        /*This puts everything to the "very top" and makes sure there is no overflow of elements*/        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body 
+        {
+            font-family: Arial, sans-serif;
+            background-color: white;
+        }
+
+        main 
+        {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1 
+        {
+            text-align: center;
+            margin: 40px 0;
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        .categories-container 
+        {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .Categories 
+        {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .category-card 
+        {
+            flex: 0 1 auto;
+            min-width: 300px;
+            max-width: 450px;
+        }
+
+        .category-card img 
+        {
+            width: 100%;
+            height: auto;
+            max-width: 450px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .category-card p 
+        {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+
+
+        
+        .top {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .bottom {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+
+
+        .myContainer
+        {
+            display: flex;
+        }   
+        .basicInfo
+        {
+            display: grid;
+            justify-content: center;
+            border: 1px solid black;
+            border-radius: 2em;
+            flex-wrap: wrap;
+            padding: 20px;              
+            margin: 20px 0;             
+            background-color: rgb(235, 235, 235);
+        } 
+        .basicInfo1
+        {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box;
+            flex-wrap: wrap;
+            gap: 20px;                  
+        }
+
+        .basicInfo1 img
+        {
+            width: 180px;              
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            justify-content: left;
+        }
+        .textInfo
+        {
+            display: grid;
+            justify-content: left;
+            gap: 6px;                   /* ADDED: tiny spacing between lines */
+        }
+
+        .moreDetails
+        {
+            display: flex;
+            justify-content: space-between;
+            padding: 30px 0;             /* ADJUSTED: removed horizontal padding, kept vertical */
+            gap: 20px;                   /* ADDED: consistent gap between stat cards */
+            flex-wrap: wrap;              /* ADDED: allow cards to wrap on smaller screens */
+            
+        }
+
+        .stats
+        {
+            background-color: rgb(235, 235, 235);
+            border: 1px solid black;
+            border-radius: 8px;
+            height: auto;
+            max-width: 300px;
+            width: 300px;
+            padding: 20px;                /* ADDED: inner breathing */
+            text-align: center;            /* ADDED: better mobile look */
+            flex: 1 1 250px;               /* ADDED: allow grow/shrink, base 250px */
+        }
+
+        
+        @media screen and (max-width: 850px) {
+            .basicInfo1 {
+                justify-content: center;    /* center content when wrapped */
+                text-align: center;
+            }
+            .textInfo {
+                justify-content: center;
+                text-align: center;
+            }
+            .basicInfo1 img {
+                margin: 0 auto;             /* center image if alone in row */
+            }
+            .edit-Infromation {
+                margin: 0 auto;              /* center button when wrapped */
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .moreDetails {
+                justify-content: center;     /* center stat cards */
+            }
+            .stats {
+                max-width: 100%;              /* take full width on small */
+                width: 100%;
+            }
+            .basicInfo {
+                padding: 15px;
+            }
+            .basicInfo1 {
+                flex-direction: column;       /* stack vertically on phones */
+                align-items: center;
+            }
+        }
+
+        .edit-Infromation 
+        {
+            padding: 10px 20px;
+            border: 1px solid black;
+            border-radius: 30px;
+            width: fit-content;
+            height: fit-content;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+            border: 1px solid transparent;
+        }
+        .edit-Infromation:hover 
+        {
+            background-color: #e68f3c;
+        }
+        .reviw-articles
+        {
+            display: grid;
+            gap: 10px;
+            border: 1px solid black;
+            border-radius: 8px;
+            justify-content: left;
+            font-size: larger;
+            font-family: inherit;
+            padding: 10px;
+            
+        }
+html {
+    scroll-behavior: smooth;
+}        
+
+    </style>
 </head>
 
 <!--this page wil have the links that will allow users to add their items that they
 wish to sell on the website-->
 <body>
+  
+  <header>
+        <!-- THIS DESIGN WAS INFLUENCED BY THE SUPERBALIST WEBSITE, I REFERENCED THEIR HEADER -->
+        <div class="myFoot">
+            <div class="top">
+              <h2>Raga</h2>
+              
+            </div>
+
+            <div class="bottom">
+          
+              <section class="links">
+                <a href="#myShop">About My shop</a>
+              </section>
+
+            <section class="links">
+                <a href="#inventory" >Inventory</a>
+            </section>
+
+            <section class="links">
+                <a href="#reviews">Rating And Reviews</a>
+            </section>
+
+              <section class="links">
+                <a href="#history">History</a>
+              </section>
+            
+            <section class="links">
+                <a href="#stats">Stats</a>
+            </section>
+
+            <section class="links">
+                <a href="home.html" >Logout</a>
+            </section>
+            
+            </div>
+        <div>
+  </header>
+
     <main>
+        <br>
+        <p>Welcome to your dashboard</p>
+        <br>
+        <h3>Basic Infromation</h3>
+        <section class="basicInfo">
+            
 
-<section id="sell" class="tab-content">
-        <h2>Start selling on RAGA</h2>
-        <p>Join other fellow Rhodes University Students on our platform.</p>
-        <p>
-          List your items for free and reach hundreds of potential buyers on
-          campus.
-        </p>
-      </section>
+            
 
-</main>
+            <section class="basicInfo1">
+                <img src="Stores/Store1/81l+dM2lC8L._SY466_.jpg">
+            
+                <section class="textInfo">
+                    <p>Store Name: God's Angels Bookstore</p>
+                    <p>Email: g23q5008@campus.ru.ac.za</p>
+                    <p>Location: Chris Hani House</p>
+                    <p>Selling Since: March 2025</p>
+                </section>
+
+                <button class="edit-Infromation">edit details</button>
+            </section>        
+        </section>    
+        
+        <h3>Stats</h3>
+        <section class="moreDetails">
+            <article class="stats">
+                <h3>
+                    Total Sales
+                </h3>
+                <h1>R5000</h1>
+            </article>
+
+            <article class="stats">
+                <h3>
+                    Reviews
+                </h3>
+                <h1>4.8</h1>
+
+                
+            </article>
+            <article class="stats">
+                <h3>
+                    Pending Orders
+                </h3>
+                <h1>14 Pending Orders</h1>
+            </article>
+        </section>
+        <h3 id="reviews"> Here is what people are saying about you</h3>
+        <section class="basicInfo">
+            
+        
+            <p>
+                <h1>You are at 4.8 Stars</h1>
+            </p>
+
+            <article class="reviw-articles">
+                    I really enoyed this product           
+            </article>
+            <br>
+
+            <article class="reviw-articles">
+                    The book came in mint Condition, definately worth the price           
+            </article>            
+        </section>
+
+
+
+    </main>    
 </body>
 </html>

@@ -1,56 +1,126 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!--these are the styles on how the social media links are displayed on the website-->
-    <style>
-        .reel
-        {
-            display: flex;
-            justify-content: center;
-        }
-        .Reel_container
-        {
-            display: flex;
-            padding: 20px;
-            justify-content: space-evenly;
-        }
-    </style>
-</head>
-
-<!--This the home page for the whole website-->
-<body bgcolor="#cca7bc">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RAGA Inc</title>
+    <link rel="stylesheet" href="RuStylish.css" />
+  </head>
+  <body class="mainSection">
     <main>
-      <section id="home" class="tab-content">
-        <h2>Welcome to RAGA Inc</h2>
+      <!-- This is the header, it contains links going to the different pages -->
+      <header class="myHead">
+        <section><a href="home.html" target="mainFrame">Home</a></section>
+        <section><a href="SignIn.html" target="mainFrame">Sign In</a></section>
+        <section><a href="SignUp.html" target="mainFrame">Sign Up</a></section>
+        <section>
+          <a href="Categories.html" target="mainFrame">Categories</a>
+        </section>
+        <section><a href="Explore.html" target="mainFrame">Explore</a></section>
+        <section><a href="sell.html" target="mainFrame">Sell</a></section>
+        <section>
+          <a href="Reviews.html" target="mainFrame">User reviews</a>
+        </section>
+        <section>
+          <a href="AboutUs.html" target="mainFrame">About Us</a>
+        </section>
+      </header>
+
+      <section class="section1">
+        <h2 class="MainHeader">Welcome to RAGA Inc</h2>
         <p>
           RAGA Inc is a revolutionary online marketplace based in Rhodes
           University, dedicated to connecting Rhodes University students who are
           buyers and sellers in a seamless, secure environment. Our platform was
-          created by students for students. Here is some reels to inform you more about the origins of RAGA
+          created by students for students. Here is some reels to inform you
+          more about the origins of RAGA.
         </p>
+
+        <section class="myButton">
+          <a href="SignIn.html"
+            ><button class="myButton">Get Started</button></a
+          >
+          <a href="Categories.html"
+            ><button class="myButton">Be My Guest</button></a
+          >
+        </section>
+        <br />
       </section>
 
-      <!--these are links to the social media pages of the website-->
       <div class="Reel_container">
-      <section id="reel">
-        <iframe src="https://www.instagram.com/reel/DHyfAkONjN0/embed"
-            width="400"
-            height="600"
-        frameborder="0">
-        </iframe>
-      </section>  
+        <section id="reel">
+          <iframe
+            src="https://www.instagram.com/reel/DHyfAkONjN0/embed"
+            loading="lazy"
+            title="Instagram reel 1"
+          >
+          </iframe>
+        </section>
 
-      <section id="reel">
-        <iframe src="https://www.instagram.com/reel/DFsXmMkITv1/embed"
-            width="400"
-            height="600"
-        frameborder="0">
-        </iframe>
-      </section>  
+        <section id="reel">
+          <iframe
+            src="https://www.instagram.com/reel/DFsXmMkITv1/embed"
+            loading="lazy"
+            title="Instagram reel 2"
+          >
+          </iframe>
+        </section>
       </div>
+      <section>
+        <h3 class="MainHeader">Here is Some more Tea...</h3>
+        <p>
+          RAGA started off as a passion project as a small Instagram page called
+          RU.thriftyy, it then transformed into a Web development project for
+          The Data Mavericks's project for their Web Dev class for 2026. the
+          inspiration of the design of this page is simply for us by us, the
+          youth, the young at heart who are driven to get the bag and get their
+          degree at the same time. This project then became a passion project
+          driven by hunger, drive and commitment. In all honesty, the job market
+          is literally cooked, and the only way to get a job in the Computer
+          Science space is creativity, innovativity and a ton of luck, sprinkled
+          by heart stopping amounts of caffeine and a dab of blood, sweat,
+          tears, sacrifices and more. This website is meant to encompass the
+          pinnacle of the Data Maverick's creativity.
+        </p>
+        <br />
+        <p>
+          We Hope you enjoy using this website, half as much as we the devs did
+          creating it!
+        </p>
+      </section>
     </main>
-</body>
+
+    <footer>
+      <h3 class="Foot"><strong>Authors' Contact Details:</strong></h3>
+      <address>
+        <h3 class="homeEmailLinks">
+          Karabo Mgwenya, email:
+          <a href="mailto:karabomgwenya@yahoo.com" class="Yes"
+            >karabomgwenya@yahoo.com</a
+          >
+        </h3>
+        <h3 class="homeEmailLinks">
+          Nigel Qango, email:
+          <a href="mailto:stumpkitunathi@gmail.com" class="Yes"
+            >stumpkitunathi@gmail.com</a
+          >
+        </h3>
+        <h3 class="homeEmailLinks">
+          Justin Mudimbu, email:
+          <a href="mailto:youngx997@gmail.com" class="Yes"
+            >youngx997@gmail.com</a
+          >
+        </h3>
+        <h3 class="homeEmailLinks">
+          Charmaine, email:
+          <a href="mailto:chikengezhacharmaine@gmail.com" class="Yes"
+            >chikengezhacharmaine@gmail.com</a
+          >
+        </h3>
+      </address>
+      <h5 class="Foot">
+        <strong>Copyright &copy; 2026 RAGA Inc.</strong> All rights reserved.
+      </h5>
+    </footer>
+  </body>
 </html>

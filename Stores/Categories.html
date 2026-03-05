@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .Categories {
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      img {
+        height: 500px;
+        width: 500px;
+        object-fit: cover;
+        border-radius: 8px;
+        transition: transform 0.3s;
+      }
+
+      img:hover {
+        transform: scale(1.02);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      p {
+        text-align: center;
+        font-size: larger;
+        color: #333;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+
+      .category-card {
+        text-align: center;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        transition: all 0.3s;
+      }
+
+      .category-card:hover {
+        background-color: #eacdf6;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      @media screen and (max-width: 1200px) {
+        img {
+          height: 400px;
+          width: 400px;
+        }
+      }
+
+      @media screen and (max-width: 900px) {
+        img {
+          height: 300px;
+          width: 300px;
+        }
+      }
+
+      @media screen and (max-width: 600px) {
+        img {
+          height: 250px;
+          width: 250px;
+        }
+
+        .Categories {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+
+      .page-header {
+        text-align: center;
+        color: #ffaa50;
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <!--this sections lists the categories of items that will be available for sale on the website-->
+
+      <header>
+        <h1 class="page-header">Browse Categories</h1>
+      </header>
+
+      <section class="Categories">
+        <a href="category_pictures/textbooks.html">
+          <section>
+            <img src="category_pictures/Textbooks.jpg" /><br />
+            <p>Textbooks</p>
+          </section>
+        </a>
+
+        <a href="category_pictures/Electronics.html">
+          <section>
+            <img src="category_pictures/Electronics.jpg" /><br />
+            <p>Electronics</p>
+          </section>
+        </a>
+      </section>
+
+      <section class="Categories">
+        <a href="category_pictures/Fashion.html">
+          <section>
+            <img src="category_pictures/Fashion.jpg" /><br />
+            <p>Fashion</p>
+          </section>
+        </a>
+
+        <a href="category_pictures/Cosmetics.html"></a>
+        <section>
+          <img src="category_pictures/Cosmetics.jpg" /><br />
+          <p>Cosmetics</p>
+        </section>
+      </section>
+
+      <section class="Categories">
+        <a href="category_pictures/Furniture.html">
+          <section>
+            <img src="category_pictures/Furniture.jpg" /><br />
+            <p>Furniture</p>
+          </section>
+        </a>
+
+        <a href="category_pictures/Others.html">
+          <section>
+            <img src="category_pictures/Others.jpg" /><br />
+            <p>Other</p>
+          </section>
+        </a>
+      </section>
+    </main>
+  </body>
+</html>

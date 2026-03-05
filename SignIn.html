@@ -4,41 +4,299 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        .reel {
-            display: flex;
-            justify-content: center;
-        }
+    <title>Let's get you signed in </title>
+    <script src="index.js"></script>
+    
+<style>
 
-        .Reel_container {
-            display: flex;
-            padding: 20px;
-            justify-content: space-evenly;
-        }
-    </style>
+body
+{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    
+}
+
+input
+{
+    width: 100%;
+    max-width: 400px;
+    padding: 1rem;
+    font-size: 1.1rem;
+    box-sizing: border-box;
+}
+
+.myButton 
+{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px 30px;
+}
+
+button.myButton 
+{
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    border: 2px solid black;
+    border-radius: 9px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 12px 24px;
+    cursor: pointer; 
+    font-family: inherit;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    min-width: 350px;
+    width: auto;
+}
+
+button.myButton:hover 
+{
+    background-color: rgb(255, 203, 143);
+    color: #000;
+    border-color: #ffaa50;
+}
+
+.myButton a:hover 
+{
+    background: transparent;
+}      
+
+.SectionButton
+{
+    display: flex;
+    justify-content: center;
+}
+
+.myBox
+{
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.left, .right
+{
+    flex: 1;
+    padding: 20px;
+}
+
+.left
+{
+    background-color: white;
+    font-size: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ffce9a;
+}
+
+.right
+{
+    background-image: url("hello.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.mainText
+{
+    font-size: 50px;
+    display: flex;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: black;
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.detailSection
+{
+    display: grid;
+    justify-content: center;
+    background-color: white;
+    max-width: 800px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.signup-container
+{
+    display: grid;
+    justify-content: center;
+}
+
+/* For the Responsiveness of the website, scaling up and down based on different resolutions of the  screens the website si being displayed on */
+@media screen and (max-width: 992px) 
+{
+    .mainText 
+    {
+        font-size: 42px;
+    }
+    
+    .left 
+    {
+        font-size: 42px;
+    }
+}
+
+@media screen and (max-width: 768px) 
+{
+    .myBox 
+    {
+        flex-direction: column;
+    }
+    
+    .left, .right 
+    {
+        flex: none;
+        width: 100%;
+    }
+    
+    .left 
+    {
+        font-size: 36px;
+        padding: 30px 20px;
+    }
+    
+    .right 
+    {
+        min-height: 300px;
+        order: -1; /* Moves image to top on mobile screens */
+    }
+    
+    .mainText 
+    {
+        font-size: 36px;
+    }
+    
+    .detailSection 
+    {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    input 
+    {
+        max-width: 350px;
+    }
+    
+    button.myButton 
+    {
+        min-width: 250px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .left {
+        font-size: 28px;
+        padding: 20px 15px;
+    }
+    
+    .mainText {
+        font-size: 32px;
+    }
+    
+    .right {
+        min-height: 200px;
+    }
+    
+    .detailSection {
+        padding: 15px;
+    }
+    
+    input {
+        padding: 0.75rem;
+        font-size: 1rem;
+        max-width: 100%;
+    }
+    
+    button.myButton {
+        min-width: 200px;
+        padding: 10px 20px;
+        width: 100%;
+    }
+    
+    .signup-container {
+        width: 100%;
+    }
+    
+    p, a {
+        font-size: 0.9rem;
+        text-align: center;
+        word-break: break-word;
+    }
+    
+    label {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .left {
+        padding: 15px 10px;
+    }
+    
+    .detailSection {
+        padding: 10px;
+    }
+    
+    .mainText {
+        font-size: 28px;
+    }
+    
+    button.myButton {
+        min-width: 150px;
+        font-size: 0.9rem;
+    }
+}
+
+/* I didnt like the purple line under the tags so i removed it with the text-decoration property */
+.SectionButton a {
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+}
+
+</style>
 </head>
 
 <body>
-    <h1>Sign In</h1>
-    <form action="" method="post">
-        <label for="email">Email</label>
+    <div class="myBox">
 
-        <input type="email" id="email" name="email"><br><br>
-        <label for="password">Password</label>
+        <div class="left">
+                
+            <h1 class="mainText">Sign In</h1>
 
-        <input type="password" id="password" name="password"><br><br>
-        
-        <label for="user_type">User Type</label>
+            <section class="leftSection">
+                <section class="detailSection">
 
-        <select name="user_type" id="user_type">
-            <option value="buyer">buyer</option>
-            <option value="seller">seller</option>
-        </select><br><br>
-        <button type="submit">Sign In</button>
-        <a href="forgot_password.html">Forgot Password</a>
-    </form>
-    <p>Don't have an account? <a href="SignUp.html">Sign Up</a></p>
+                    <form action="Explore.html" method="post" class="flex-form signin-form">
+                        
+                        <label for="email">Email</label><br>
+                        <input type="email" id="email" name="email" required><br>
+                        <label for="password" >Password</label><br>
+                        <input type="password" id="password" name="password" required><br>
+                        <br>
+                        <section class="SectionButton">
+                            <a href="Explore.html">
+                                <button class="myButton">Sign In</button>
+                            </a>
+                        </section>
+                        
+                        <a href="forgot_password.html">Forgot Password</a>
+                    </form>
 
+                    <p>Don't have an account? <a href="SignUp.html">Sign Up</a></p>
+                </section>
+            </section>
+        </div>
+
+        <div class="right">
+        </div>
+    </div>
 </body>
 
 </html>

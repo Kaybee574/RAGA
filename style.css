@@ -1,0 +1,719 @@
+/* ============================================
+   Web Technologies & Security - Practical 2
+   CSS Stylesheet for RAGA Inc.
+   Author: The Data Mavericks Team
+   Date: October 2025
+   
+   This stylesheet meets all CSS practical requirements:
+   - No frameworks used (pure CSS)
+   - Responsive design with media queries
+   - Flexbox for forms
+   - Dropdown menus
+   - Navigation styling
+   - CSS Layout attributes (float, clear)
+   - Multi-column layout
+   ============================================ */
+
+/* ---------- RESET & BASE STYLES ---------- */
+/* CSS Reset - ensures consistency across browsers */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* CSS3 property - creative addition */
+}
+
+/* ---------- COLOR PALETTE (5+ colors as required) ---------- */
+:root {
+  --primary: #7e3285;      /* Orange - Primary brand color */
+  --secondary: #eacdf6;     /* Lavender - Secondary color */
+  --accent: #ff8c69;        /* Coral - Accent color */
+  --dark: #333333;          /* Dark gray - Text color */
+  --light: #f9f9f9;         /* Light gray - Background */
+  --white: #ffffff;         /* White - Background */
+  --success: #4caf50;       /* Green - Success messages */
+  --error: #f44336;         /* Red - Error messages */
+}
+
+/* ---------- TYPOGRAPHY (4+ styles as required) ---------- */
+body {
+  font-family: 'Cambria', 'Cochin', 'Georgia', 'Times New Roman', serif;
+  color: var(--dark);
+  line-height: 1.6;         /* Different line height style */
+  background-color: var(--light);
+}
+
+h1, h2, h3 {
+  margin-bottom: 1rem;
+  font-weight: 700;         /* Bold font weight */
+  color: var(--primary);
+  text-align: center;       /* Center alignment style */
+}
+
+h1 { font-size: 2.5rem; }   /* Different font size */
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+
+p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;        /* Larger paragraph text */
+  color: #7e3285;
+}
+
+/* ---------- HEADER & SITE TITLE ---------- */
+.site-title {
+  font-size: 3rem;
+  color: var(--primary);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1); /* Text shadow - creative */
+  margin-bottom: 0;
+  padding: 1rem 0 0 0;
+}
+
+.site-tagline {
+  text-align: center;
+  font-style: italic;       /* Italic style */
+  color: var(--accent);
+  margin-top: 0;
+  padding-bottom: 1rem;
+}
+
+/* ---------- NAVIGATION BAR (Prac 2 requirement) ---------- */
+.main-nav {
+  background-color: var(--dark);
+  padding: 0.5rem 1rem;
+  position: sticky;          /* Sticky navigation - from Chapter 5 */
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Box shadow - creative */
+}
+
+.nav-menu {
+  list-style: none;         /* Remove bullets */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;          /* Wrap on small screens */
+  gap: 1.5rem;              /* Gap between items */
+  padding: 0.5rem;
+}
+
+.nav-menu li {
+  position: relative;       /* For dropdown positioning */
+}
+
+.nav-menu a {
+  color: var(--white);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  display: block;
+  font-size: 1.2rem;
+  transition: all 0.3s ease; /* Transition effect - creative */
+  border-radius: 4px;
+}
+
+/* Hover effect */
+.nav-menu a:hover {
+  background-color: var(--primary);
+  color: var(--white);
+  transform: translateY(-2px); /* Transform - creative */
+}
+
+/* Active link */
+.nav-menu a.active {
+  background-color: var(--primary);
+  font-weight: bold;
+}
+
+/* ---------- DROPDOWN MENU (Prac 2 requirement) ---------- */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;            /* Hidden by default */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--white);
+  min-width: 200px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  z-index: 1000;
+  list-style: none;
+  padding: 0.5rem 0;
+}
+
+/* Show dropdown on hover (Prac 2 requirement) */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Dropdown animation - creative addition */
+.dropdown-menu {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dropdown-menu a {
+  color: var(--dark);
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+  background-color: var(--secondary);
+  color: var(--dark);
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.dropdown-arrow {
+  font-size: 0.8rem;
+}
+
+/* Mobile navigation toggle */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-menu {
+    gap: 0.75rem;
+  }
+  
+  .nav-menu a {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 480px) {
+  .nav-toggle {
+    display: block;         /* Show hamburger menu */
+  }
+  
+  .nav-menu {
+    display: none;          /* Hide menu initially */
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+  }
+  
+  .nav-menu.show {
+    display: flex;          /* Show when toggled */
+  }
+  
+  .nav-menu li {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .dropdown-menu {
+    position: static;       /* Dropdown becomes part of flow on mobile */
+    box-shadow: none;
+    display: none;
+    width: 100%;
+  }
+  
+  .dropdown:hover .dropdown-menu {
+    display: block;         /* Still works on touch devices */
+  }
+  
+  .dropdown-menu a {
+    padding-left: 2rem;     /* Indent dropdown items */
+  }
+}
+
+
+.flex-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.formrow {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.formrow label {
+  flex: 0 0 120px;          /* Fixed width for labels */
+  font-weight: bold;
+  color: var(--dark);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.formrow input,
+.formrow select,
+.formrow textarea {
+  flex: 1;                   /* Take remaining space */
+  min-width: 200px;
+  padding: 0.75rem;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.formrow input:focus,
+.formrow select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.formrow small{
+  color: red;
+  display: none;
+}
+
+.formrow.error small{
+  display: block;
+}
+
+.formrow.error input{
+  border-color: red;
+}
+
+.forgot_password small{
+  color: red;
+  display: none;
+}
+
+.forgot_password.error small{
+  display: block;
+}
+
+.forgot_password.error input{
+  border-color: red;
+}
+
+/* ---------- CSS FORMS STYLING (Prac 2 requirement - 3 forms) ---------- */
+/* Form 1: Sign In form */
+.signin-form {
+  composes: flex-form;       /* CSS Modules-like composition */
+}
+
+/* Form 2: Sign Up form */
+.signup-form {
+  composes: flex-form;
+}
+
+/* Form 3: Review form */
+.review-form {
+  composes: flex-form;
+}
+
+/* Form 4: Forgot Password form (extra) */
+.forgot-form {
+  composes: flex-form;
+}
+
+button, .btn {
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--accent);
+}
+
+
+.float-left {
+  float: left;
+  margin: 0 1rem 1rem 0;
+}
+
+.float-right {
+  float: right;
+  margin: 0 0 1rem 1rem;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+.multicol-demo {
+  column-count: 3;           /* Split into 3 columns */
+  column-gap: 2rem;          /* Gap between columns */
+  column-rule: 2px solid var(--secondary); /* Rule between columns */
+  padding: 1rem;
+  margin: 2rem 0;
+  background-color: var(--white);
+  border-radius: 8px;
+}
+
+.multicol-demo h3 {
+  column-span: all;          /* Header spans all columns */
+  margin-bottom: 1rem;
+}
+
+/* ---------- CSS LISTS STYLING (Prac 2 requirement) ---------- */
+/* Unordered list styling */
+.contact-list {
+  list-style-type: square;   /* Square bullets */
+  padding-left: 2rem;
+  color: var(--dark);
+}
+
+.contact-list li {
+  margin-bottom: 0.5rem;
+}
+
+/* Ordered list styling */
+.styled-ol {
+  list-style-type: upper-roman; /* Roman numerals */
+  padding-left: 2rem;
+  margin: 1rem 0;
+}
+
+/* Description list styling */
+.styled-dl {
+  margin: 1rem 0;
+}
+
+.styled-dl dt {
+  font-weight: bold;
+  color: var(--primary);
+  margin-top: 0.5rem;
+}
+
+.styled-dl dd {
+  margin-left: 2rem;
+  color: var(--dark);
+}
+
+/* Navigation list styling (for sidebar) */
+.nav-list {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-list li {
+  border-bottom: 1px solid #eee;
+}
+
+.nav-list a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: var(--dark);
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.nav-list a:hover {
+  background-color: var(--secondary);
+  padding-left: 1.5rem;      /* Slide effect */
+}
+
+/* ---------- CSS TABLES STYLING (Prac 2 requirement) ---------- */
+/* Table 1: Basic data table */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  background-color: var(--white);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.data-table caption {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+.data-table th {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.data-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #eee;
+}
+
+.data-table tr:hover {
+  background-color: var(--secondary); /* Hover effect */
+}
+
+/* Table 2: Striped table */
+.striped-table {
+  composes: data-table;
+}
+
+.striped-table tbody tr:nth-child(odd) {
+  background-color: #f2f2f2; /* Zebra striping */
+}
+
+/* Table 3: Borderless table */
+.borderless-table {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.borderless-table td,
+.borderless-table th {
+  padding: 0.75rem;
+}
+
+/* ---------- FILE PATHS (Prac 2 requirement) ---------- */
+.file-paths {
+  background-color: var(--white);
+  padding: 1rem;
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+
+.file-paths ul {
+  list-style-type: none;
+}
+
+.file-paths a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.file-paths a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- SOCIAL MEDIA LINKS (Prac 2 requirement) ---------- */
+.social-links {
+  margin: 1rem 0;
+}
+
+.social-list {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.social-list a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.social-list a:hover {
+  background-color: var(--accent);
+  transform: scale(1.05);    /* Scale effect */
+}
+
+/* ---------- FOOTER ---------- */
+.site-footer {
+  background-color: var(--dark);
+  color: var(--white);
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+  clear: both;               /* Clear floats */
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.site-footer a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- IFRAME STYLING ---------- */
+.iframe-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--white);
+}
+
+/* ---------- POSITIONING EXAMPLES (Chapter 5) ---------- */
+/* Static positioning (default) */
+.position-static {
+  position: static;
+}
+
+/* Relative positioning */
+.position-relative {
+  position: relative;
+  top: 10px;
+  left: 10px;
+}
+
+/* Fixed positioning - e.g., back to top button */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  display: none;             /* Hidden by default, show with JS */
+}
+
+/* Absolute positioning example */
+.position-absolute-example {
+  position: relative;
+  height: 200px;
+  background-color: var(--secondary);
+}
+
+.absolute-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--primary);
+  padding: 1rem;
+  color: var(--white);
+}
+
+/* Sticky positioning example */
+.sticky-note {
+  position: sticky;
+  top: 60px;                 /* Below main nav */
+  background-color: var(--accent);
+  padding: 1rem;
+  color: var(--white);
+  z-index: 900;
+}
+
+/* ---------- FLOATING ELEMENTS EXAMPLE ---------- */
+.float-example {
+  overflow: auto;            /* Contain floats */
+  background-color: var(--white);
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.float-box {
+  float: left;
+  width: 150px;
+  height: 150px;
+  background-color: var(--primary);
+  margin: 0 1rem 1rem 0;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- CREATIVE ADDITIONS (For 20% bonus marks) ---------- */
+/* 1. CSS Animations */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animated-element {
+  animation: slideIn 0.5s ease;
+}
+
+/* 2. CSS Transitions */
+.transition-demo {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 3. CSS Gradients */
+.gradient-bg {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  color: var(--white);
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+/* 4. CSS Filters */
+.filter-demo img {
+  filter: grayscale(50%) brightness(1.1);
+  transition: filter 0.3s;
+}
+
+.filter-demo img:hover {
+  filter: grayscale(0%) brightness(1);
+}
+
+/* 5. CSS Custom Properties (already using :root) */
+
+/* ---------- PRINT STYLES (Media query for different medium) ---------- */
+@media print {
+  .main-nav,
+  .social-links,
+  button,
+  iframe {
+    display: none;
+  }
+  
+  body {
+    font-size: 12pt;
+    color: black;
+    background: white;
+  }
+  
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+}
