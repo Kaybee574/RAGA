@@ -44,7 +44,7 @@ p {
 }
 
 .Foot {
-  color: rgb(238, 130, 238);
+  color: rgb(248, 162, 2);
   text-align: center;
   font-size: clamp(1rem, 2.5vw, 1.8rem);
 }
