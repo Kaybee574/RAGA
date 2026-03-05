@@ -1,66 +1,90 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .tab_content {
+        border: 1px solid black;
+        padding: 20px;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reviews - RAGA Inc</title>
-  <link rel="stylesheet" href="global.css">
-  <script src="script.js" defer></script>
-</head>
+      button {
+        font-size: larger;
+      }
 
-<body style="background-color: transparent;">
-  <main class="page-container">
-    <section id="review">
-      <h2>Student Testimonials & Reviews</h2>
+      .review-item {
+        margin-bottom: 20px;
+        padding: 15px;
+        background-color: #f9f9f9;
+        border-radius: 4px;
+      }
 
-      <!-- Description List Requirement -->
-      <h3>What Buyers Are Saying</h3>
-      <dl
-        style="margin-left: 20px; margin-bottom: 30px; background: var(--surface-color); padding: 15px; border-radius: 8px;">
-        <dt><strong>Lerato (Seller)</strong></dt>
-        <dd style="margin-bottom: 10px; margin-left: 20px;"><em>"RAGA really helped me reach a larger audience with my
-            doughnut selling business. I am really grateful for this opportunity RAGA gave me to grow my side
-            hustle!"</em></dd>
+      .review-author {
+        font-weight: bold;
+        color: #ffaa50;
+      }
 
-        <dt><strong>Tshepo (Buyer)</strong></dt>
-        <dd style="margin-left: 20px;"><em>"I also would recommend RAGA to everyone literally! I am a buyer and there
-            are a lot of cool shops here on display."</em></dd>
-      </dl>
+      .review-email {
+        color: #666;
+        font-size: 0.9em;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <!--This page contains the reviews from customers that have used the website-->
 
-      <!-- Table Requirement 2 -->
-      <h3>Top Sellers of the Month</h3>
-      <div class="table-wrapper">
-        <table class="custom-table" summary="Top rated sellers of the current month">
-          <thead>
-            <tr>
-              <th>Seller Name</th>
-              <th>Category</th>
-              <th>Rating (Out of 5)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Lerato's Doughnuts</td>
-              <td>Food</td>
-              <td>4.9 &#9733;</td>
-            </tr>
-            <tr>
-              <td>RU Thrifty</td>
-              <td>Fashion</td>
-              <td>4.8 &#9733;</td>
-            </tr>
-            <tr>
-              <td>Tech Haven</td>
-              <td>Electronics</td>
-              <td>4.6 &#9733;</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <h1>Here are some reviews of some buyers/sellers who have used RAGA</h1>
 
-    </section>
-  </main>
-</body>
+      <nav aria-label="Review actions">
+        <button type="button">
+          <a href="submitReview.html">Add your Own Review</a>
+        </button>
+      </nav>
 
+      <br />
+      <br />
+      <section class="tab_content">
+        <article class="review-item">
+          <header>
+            <p class="review-author">Lerato</p>
+            <p class="review-email">g******@campus.ru.ac.za</p>
+          </header>
+          <p>
+            I am Lerato and RAGA really helped me reach a larger audience with
+            my donut selling business. I am really greatful of this oppoturnity
+            RAGA gave me to grow my side hustle.
+          </p>
+        </article>
+
+        <article class="review-item">
+          <header>
+            <p class="review-author">Tshepo</p>
+            <p class="review-email">g******@campus.ru.ac.za</p>
+          </header>
+          <p>
+            Tshepo here and I also would recommend RAGA to everyone literally, i
+            am a buyer and I there is a lot of cool shops here on display.
+          </p>
+        </article>
+
+        <article class="review-item">
+          <header>
+            <p class="review-author">Your Review Could Be Here!</p>
+          </header>
+          <p>
+            Be the next person to share your experience with RAGA. Click the
+            "Add your Own Review" button above.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer style="margin-top: 30px; text-align: center; color: #666">
+      <p>
+        <small>&copy; 2026 RAGA Inc. - All reviews are from real users</small>
+      </p>
+    </footer>
+  </body>
 </html>

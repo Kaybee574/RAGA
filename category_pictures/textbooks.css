@@ -1,0 +1,341 @@
+        /* This Section of code just draws everything back to the default postiion which is the very top */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body 
+        {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main 
+        {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+            flex: 1;
+        }
+
+        /* Textbook grid section */
+        .textbookMainSection 
+        {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin: 40px 0;
+            width: 100%;
+        }
+
+        .Textbooks 
+        {
+            flex: 0 1 300px; /* Don't grow, can shrink, basis 300px */
+            min-width: 280px;
+            max-width: 350px;
+            transition: transform 0.3s ease;
+        }
+
+
+        .Textbooks a 
+        {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .details 
+        {
+            background-color: #f9f9f9;   
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .details:hover 
+        {
+            background-color: #ffaa50;
+            transform: scale(1.02);
+            box-shadow: 0 5px 20px rgba(255, 170, 80, 0.3);
+        }
+
+        .details img 
+        {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            margin-bottom: 15px; 
+        }
+
+        .details figcaption 
+        {
+            font-size: 1.1rem;
+            margin: 5px 0;
+            line-height: 1.4;
+        }
+        .details:hover figcaption 
+        {
+            color: white;
+        }
+
+
+        /* Header styles - matching main site */
+        .myFoot 
+        {
+            width: 100%;
+            padding: 20px 0;
+            margin-bottom: 20px;
+        }
+
+        .top {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .top h3 {
+            font-size: 2rem;
+            color: #ffaa50;
+            min-width: 100px;
+        }
+
+
+
+    input
+    {
+    flex: 1;
+      height: 25px;
+      width: 750px;
+    }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #ffaa50;
+        }
+
+        .search-button {
+            padding: 12px 25px;
+            background-color: #ffaa50;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .search-button:hover {
+            background-color: #ff9900;
+        }
+
+        .icon {
+            width: 35px;
+            height: 35px;
+            object-fit: contain;
+            transition: transform 0.3s;
+        }
+
+        .icon:hover {
+            transform: scale(1.1);
+        }
+
+        .bottom 
+        {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px 25px;
+            margin-top: 15px;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        .links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .links a:hover 
+        {
+            
+            background-color: #ffaa50;
+        }
+
+        /* Responsive breakpoints */
+        @media screen and (max-width: 1024px) {
+            .Textbooks {
+                flex: 0 1 280px;
+            }
+            
+            .details img {
+                height: 260px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+                margin: 30px 0;
+            }
+
+            .textbookMainSection {
+                gap: 25px;
+            }
+
+            .Textbooks {
+                flex: 0 1 260px;
+                min-width: 240px;
+            }
+
+            .details {
+                padding: 15px;
+            }
+
+            .details img {
+                height: 240px;
+            }
+
+            .details figcaption {
+                font-size: 1rem;
+            }
+            
+            .top {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .top h3 {
+                text-align: center;
+            }
+            
+            .search-input {
+                width: 100%;
+            }
+            
+            .search-button {
+                width: 100%;
+            }
+            
+            .icon {
+                align-self: center;
+            }
+            
+            .bottom {
+                gap: 10px 15px;
+            }
+            
+            .links a {
+                font-size: 0.9rem;
+                padding: 5px 8px;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            main {
+                padding: 0 15px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+                margin: 25px 0;
+            }
+
+            h1::after {
+                width: 80px;
+            }
+
+            .textbookMainSection {
+                gap: 20px;
+            }
+
+            .Textbooks {
+                flex: 0 1 100%;
+                max-width: 350px;
+            }
+
+            .details img {
+                height: 280px;
+            }
+
+            .bottom {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .links {
+                width: 100%;
+                text-align: center;
+            }
+
+            .links a {
+                display: block;
+                padding: 10px;
+                background-color: #f5f5f5;
+                border-radius: 8px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+                margin: 20px 0;
+            }
+
+            h1::after {
+                width: 60px;
+                height: 2px;
+            }
+
+            .details {
+                padding: 12px;
+            }
+
+            .details img {
+                height: 250px;
+                margin-bottom: 10px;
+            }
+
+            .details figcaption {
+                font-size: 0.95rem;
+            }
+
+            .details figcaption:last-of-type {
+                font-size: 1.1rem;
+            }
+
+            .top h3 {
+                font-size: 1.6rem;
+            }
+        }
+
+        /* For very small devices */
+        @media screen and (max-width: 320px) {
+            h1 {
+                font-size: 1.3rem;
+            }
+
+            .details img {
+                height: 200px;
+            }
+
+            .details figcaption {
+                font-size: 0.85rem;
+            }
+        }
+

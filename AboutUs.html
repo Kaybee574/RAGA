@@ -1,82 +1,185 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - RAGA Inc Team</title>
+    <!--This ensures that the picture and about us info is displayed as seen on the website-->
+    <link rel="stylesheet" href="mainCss.css">
+    <style>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - RAGA Inc</title>
-  <link rel="stylesheet" href="global.css">
-  <script src="script.js" defer></script>
-</head>
+      .team-member {
+        display: flex;
+        padding: 20px;
+        justify-content: space-evenly;
+        background-color: #eacdf6;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        align-items: center;
+      }
 
-<body style="background-color: transparent;">
-  <!-- We ensure background is transparent so the root background color flows in -->
-  <main class="page-container">
-    <section id="about-us">
-      <h2>Meet Our Team</h2>
-      <p style="text-align:center;">
-        We are a diverse group of students who are passionate about making student life better.<br>
-        Here's who we are:
-      </p>
+      p {
+        background-color: #eacdf6;
+        padding: 20px;
+        border-radius: 8px;
+      }
 
-      <div style="text-align: center; margin-bottom: 20px;">
-        <button class="btn btn-success" onclick="toggleColumns()">Toggle 4 Columns (JS Layout Test)</button>
-      </div>
+      .team-info {
+        max-width: 600px;
+        line-height: 1.8;
+      }
 
-      <!-- Multi-column container (Prac 2 Requirement) -->
-      <div class="multi-col">
+      h2 {
+        color: #ffaa50;
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 20px;
+      }
 
-        <!-- Team Member 1 -->
-        <article class="team-card">
-          <img src="justin.jpg" alt="Justin Mudimbu, Backend Lead" width="150" height="150" />
-          <h3>Justin Mudimbu</h3>
-          <p class="role"><strong>Backend Lead</strong></p>
+      .intro-text {
+        text-align: center;
+        font-size: 1.2rem;
+        color: #666;
+        margin-bottom: 30px;
+      }
+
+      img {
+        border-radius: 50%;
+        border: 3px solid #ffaa50;
+        object-fit: cover;
+      }
+
+      @media screen and (max-width: 768px) {
+        .team-member {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        img {
+          margin-bottom: 20px;
+        }
+      }
+
+      strong {
+        color: #ffaa50;
+        font-size: 1.3rem;
+      }
+      .intro {
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <!--This has information about each member of the team along with their picture-->
+
+    <section id="about-us" class="tab-content">
+      <header>
+        <h2>Meet our team</h2>
+        <p class="intro">
+          We are a diverse group of students who are passionate about making
+          student life better.<br />Here's who we are:
+        </p>
+      </header>
+
+      <!--This inserts the picture of each team member along with the required measurements for the photo-->
+
+      <article class="team-member">
+        <figure>
+          <img
+            src="justin.jpg"
+            alt="Justin Mudimbu, Backend Lead"
+            width="300"
+            height="300"
+          />
+          <figcaption style="text-align: center; margin-top: 5px">
+            Justin Mudimbu
+          </figcaption>
+        </figure>
+
+        <!--This paragraph explains a little bit about each team member and their role-->
+        <div class="team-info">
           <p>
-            Justin architect our server-side infrastructure and APIs.<br>
-            Specializes in scalable system design and security implementation.<br>
+            <strong>Justin Mudimbu - Backend Lead</strong><br />
+            Justin architect our server-side infrastructure and APIs.<br />
+            Specializes in scalable system design and security
+            implementation.<br />
             Ensures our platform remains robust and reliable.
           </p>
-        </article>
+        </div>
+      </article>
 
-        <!-- Team Member 2 -->
-        <article class="team-card">
-          <img src="charmaine.jpg" alt="Charmaine Chikengezha, Database Architect" width="150" height="150" />
-          <h3>Charmaine</h3>
-          <p class="role"><strong>Database Architect</strong></p>
+      <article class="team-member">
+        <figure>
+          <img
+            src="charmaine.jpg"
+            alt="Charmaine Chikengezha, Database Architect"
+            width="300"
+            height="300"
+          />
+          <figcaption style="text-align: center; margin-top: 5px">
+            Charmaine Chikengezha
+          </figcaption>
+        </figure>
+        <div class="team-info">
           <p>
-            Charmaine designs and optimizes our database structures.<br>
-            Expert in data modeling and query optimization.<br>
-            Ensures efficient data storage and retrieval.
+            <strong>Charmaine - Database Architect</strong><br />
+            Charmaine designs and optimizes our database structures.<br />
+            Expert in data modeling and query optimization.<br />
+            Ensures efficient data storage and retrieval for our growing
+            platform.
           </p>
-        </article>
+        </div>
+      </article>
 
-        <!-- Team Member 3 -->
-        <article class="team-card">
-          <img src="nigel.jpg" alt="Nigel Qongo" width="150" height="150" />
-          <h3>Nigel Qongo</h3>
-          <p class="role"><strong>Frontend Lead</strong></p>
+      <article class="team-member">
+        <figure>
+          <img
+            src="nigel.jpg"
+            alt="Nigel Qongo, Frontend Lead"
+            width="300"
+            height="300"
+          />
+          <figcaption style="text-align: center; margin-top: 5px">
+            Nigel Qango
+          </figcaption>
+        </figure>
+        <div class="team-info">
           <p>
-            Nigel specializes in creating intuitive user interfaces.<br>
-            Expert in HTML, CSS, and modern frontend frameworks.<br>
-            Focuses on delivering exceptional user experiences.
+            <strong>Nigel Qongo - Frontend Lead</strong><br />
+            Nigel specializes in creating intuitive and responsive user
+            interfaces.<br />
+            Expert in HTML, CSS, and modern frontend frameworks.<br />
+            Focuses on delivering exceptional user experiences across all
+            devices.
           </p>
-        </article>
+        </div>
+      </article>
 
-        <!-- Team Member 4 -->
-        <article class="team-card">
-          <img src="karabo.jpeg" alt="Karabo Mgwenya" width="150" height="150" />
-          <h3>Karabo Mgwenya</h3>
-          <p class="role"><strong>Full Stack Developer</strong></p>
+      <article class="team-member">
+        <figure>
+          <img
+            src="karabo.jpg"
+            alt="Karabo Mgwenya, Full Stack Developer"
+            width="300"
+            height="300"
+          />
+          <figcaption style="text-align: center; margin-top: 5px">
+            Karabo Mgwenya
+          </figcaption>
+        </figure>
+        <div class="team-info">
           <p>
-            Karabo leads our full stack development.<br>
-            Skilled in JavaScript, Python, and database management.<br>
-            Ensures seamless integration between UI and server.
+            <strong>Karabo Mgwenya - Full Stack Developer</strong><br />
+            Karabo leads our full stack development with expertise in both
+            frontend and backend technologies.<br />
+            Skilled in JavaScript, Python, and database management.<br />
+            Ensures seamless integration between user interface and server-side
+            functionality.
           </p>
-        </article>
-
-      </div>
+        </div>
+      </article>
     </section>
-  </main>
-</body>
 
+
+  </body>
 </html>
