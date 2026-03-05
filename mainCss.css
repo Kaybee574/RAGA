@@ -21,18 +21,20 @@
     }
     .top
     {
+      max-width: 100%;
       flex: 1;
       background-color: rgb(250, 171, 106);
       display: flex;
       gap: 50px;
       justify-content: center;
       padding: 10px;
+      
     }
 
     .bottom
     {
       flex: 1;
-      background-color: aqua;
+      background-color: rgb(250, 171, 106) ;
       display: flex;
       gap: 20px;
       justify-content: center;
@@ -40,6 +42,8 @@
       font-size: x-large;  
       font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;   
     }
+
+
     .myFoot
     {
       display: flex;
@@ -97,7 +101,7 @@
     }
     .links:hover
     {
-      background-color: rgb(250, 171, 106);
+      background-color: white;
       
       border-radius: 5px;
     }

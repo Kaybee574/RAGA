@@ -82,12 +82,14 @@
             background-color: white;
             
         }
-
+        /*COME BACK HERE AND FIX THE BLEEDING OF THE MAIN HEADER*/
         main 
         {
-            max-width: 1400px;
+            max-width: 100%;
             margin: 0 auto;
             padding: 0 20px;
+            box-sizing: border-box;
+            overflow: hidden;
         }
 
         h1 
@@ -187,14 +189,18 @@
             align-items: center;
             gap: 15px;
             flex-wrap: wrap;
+            max-width: 100%;
         }
 
-        .bottom {
+/*         .bottom 
+        {
             display: flex;
+            flex: 1;
             flex-wrap: wrap;
             gap: 20px;
             margin-top: 20px;
-        }
+            background-color: white;
+        } */
 
         .icon {
             width: 30px;
