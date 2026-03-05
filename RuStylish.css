@@ -1,263 +1,235 @@
 /*************************************************MOSTLY FOR THE HOME PAGE***************************************************************************************************/
 /* ----- RESET & GLOBAL ----- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-        body 
-        {
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            background-color: #000000; 
-            min-height: 100vh;
+body {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: #000000;
+  min-height: 100vh;
 
-            display: flex;
-            flex-direction: column; /*This is very important line of code, displays everything in a column layout*/
-        }
+  display: flex;
+  flex-direction: column; /*This is very important line of code, displays everything in a column layout*/
+}
 
-        .mainSection 
-        {
-            background-image: url("hello2.jpg");
-            background-size: cover;
-            background-attachment: fixed; /* makes the background picture remain where it is and not move when scrolling*/
-            flex: 1;
-            width: 100%;
-        }
+.mainSection {
+  background-image: url("hello2.jpg");
+  background-size: cover;
+  background-attachment: fixed; /* makes the background picture remain where it is and not move when scrolling*/
+  flex: 1;
+  width: 100%;
+}
 
-        
-        .MainHeader 
-        {
-            font-size: clamp(2.8rem, 15vw, 150px);   /* This clamp feature makes the font scale up and down based to our own desire, clamp(minimum size, prefered size, maximum size)*/
-            color: #ffaa50;
-            text-align: center;
-            padding: 20px;   /* Pretty Self Explainatory*/
-        }
+.MainHeader {
+  font-size: clamp(
+    2.8rem,
+    15vw,
+    150px
+  ); /* This clamp feature makes the font scale up and down based to our own desire, clamp(minimum size, prefered size, maximum size)*/
+  color: #ffaa50;
+  text-align: center;
+  padding: 20px; /* Pretty Self Explainatory*/
+}
 
-        p 
-        {
-            color: rgb(255, 203, 143);
-            font-size: clamp(1.2rem, 4vw, 50px);
-            max-width: 1500px;
-            width: 90%;
-            margin: 1.5rem auto; /*This makes the paragraph texts dkew to the left if it is not applied*/
-            text-align: center;
-            
-        }
+p {
+  color: rgb(255, 203, 143);
+  font-size: clamp(1.2rem, 4vw, 50px);
+  max-width: 1500px;
+  width: 90%;
+  margin: 1.5rem auto; /*This makes the paragraph texts dkew to the left if it is not applied*/
+  text-align: center;
+}
 
-        .Foot 
-        {
-            color: rgb(238, 130, 238);
-            text-align: center;
-            font-size: clamp(1rem, 2.5vw, 1.8rem);
-        }
+.Foot {
+  color: rgb(238, 130, 238);
+  text-align: center;
+  font-size: clamp(1rem, 2.5vw, 1.8rem);
+}
 
-        /* ----- flexible header (navigation) ----- */
-        .myHead 
-        {
-            display: flex;
-            /* I made the header sticky so that it stays on the same place and not move when the user scrolls it looks kind of... but yeah*/
-            position: sticky;
-            top: 0;
-            
-            flex-wrap: wrap;  /*THis makes my header to wrap around the whole conent that is on my header page*/
-            justify-content: center;
-            gap: 0.8rem 1.8rem;
-            padding: 20px 16px;
-            background-color: rgba(0, 0, 0, 0.5); /* subtle overlay so links pop */
-            
-            
-            border-bottom: 2px solid black; /*The bottom of the border of my header to be black*/
-        }
+/* ----- flexible header (navigation) ----- */
+.myHead {
+  display: flex;
+  /* I made the header sticky so that it stays on the same place and not move when the user scrolls it looks kind of... but yeah*/
+  position: sticky;
+  top: 0;
 
-        a 
-        {
-            color: white;
-            text-decoration: none;  /*THis makes the links not have a line underneath*/
-            font-size: clamp(1.2rem, 3vw, 2rem);  /*Same as the top, (smallest, medium, largest)*/
-            padding: 6px 12px;
-        }
+  flex-wrap: wrap; /*THis makes my header to wrap around the whole conent that is on my header page*/
+  justify-content: center;
+  gap: 0.8rem 1.8rem;
+  padding: 20px 16px;
+  background-color: rgba(0, 0, 0, 0.5); /* subtle overlay so links pop */
 
-        /* This is so that when you visit a link when you come back to it its not purple */
-        a:visited 
-        {
-            color: white;
-        }
+  border-bottom: 2px solid black; /*The bottom of the border of my header to be black*/
+}
 
-        a:hover 
-        {
-            background-color: rgb(255, 203, 143);
-            color: white;
-        }
+a {
+  color: white;
+  text-decoration: none; /*THis makes the links not have a line underneath*/
+  font-size: clamp(
+    1.2rem,
+    3vw,
+    2rem
+  ); /*Same as the top, (smallest, medium, largest)*/
+  padding: 6px 12px;
+}
 
-        /* For my buttons */
-        .myButton 
-        {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px 30px;
-            
-        }
+/* This is so that when you visit a link when you come back to it its not purple */
+a:visited {
+  color: white;
+}
 
-        button.myButton 
-        {
-            font-size: clamp(1.4rem, 4vw, 2.2rem);
-            border: 2px solid black;
-            border-radius: 9px;
-            color: white;
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 12px 24px;
-            cursor: pointer; 
-            font-family: inherit; /*INherit the font from the closest antcestor*/
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            min-width: 200px;
-        }
+a:hover {
+  background-color: rgb(255, 203, 143);
+  color: white;
+}
 
-        /*Adding effects on the buttons whenever you hover above them*/
-        button.myButton:hover 
-        {
-            background-color: rgb(255, 203, 143);
-            color: #000;
-            border-color: #ffaa50;
-        }
+/* For my buttons */
+.myButton {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px 30px;
+}
 
+button.myButton {
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
+  border: 2px solid black;
+  border-radius: 9px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 12px 24px;
+  cursor: pointer;
+  font-family: inherit; /*INherit the font from the closest antcestor*/
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  min-width: 200px;
+}
 
-        .myButton a:hover 
-        {
-            background: transparent;
-        }
+/*Adding effects on the buttons whenever you hover above them*/
+button.myButton:hover {
+  background-color: rgb(255, 203, 143);
+  color: #000;
+  border-color: #ffaa50;
+}
 
-        /*For the INstagram reels*/
-        .Reel_container 
-        {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-            align-items: center;
-            gap: 30px 20px;
-            padding: 20px 16px;
-            max-width: 1600px;
-            margin: 0 auto;
-        }
+.myButton a:hover {
+  background: transparent;
+}
 
-        #reel 
-        {
-            flex: 1 1 400px;            /* letting the 2 reel links ot be 400px each */
-            max-width: 600px;
-            min-width: 280px;
-            display: flex;
-            justify-content: center;
-        }
+/*For the INstagram reels*/
+.Reel_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 30px 20px;
+  padding: 20px 16px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
 
-        #reel iframe 
-        {
-            width: 100%;
-            height: auto;
-            aspect-ratio: 600 / 750;    /* preserve original proportions */
-            max-width: 600px;
-            border: 0;
-            border-radius: 24px;
-            
-        }
+#reel {
+  flex: 1 1 400px; /* letting the 2 reel links ot be 400px each */
+  max-width: 600px;
+  min-width: 280px;
+  display: flex;
+  justify-content: center;
+}
 
+#reel iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 600 / 750; /* preserve original proportions */
+  max-width: 600px;
+  border: 0;
+  border-radius: 24px;
+}
 
-        .tab-content 
-        {
-            background-size: cover;
-            min-width: 100vw;            /* changed to viewport units */
-            min-height: 100vh;
-            background-repeat: no-repeat;
-        }
-        /*For the Email Links*/
-        .homeEmailLinks 
-        {
-            color: white;
-            font-size: clamp(1rem, 2.2vw, 1.8rem);
-            font-weight: normal;
-            margin: 0.8rem 0;
-        }
-        .Yes /*I ran out of class names but this is for editiing the links to the emails*/
-        {
-            color: white;
-            font-size: large;            /* keep original, but wrap */
-            font-size: clamp(1rem, 2vw, 1.5rem);
-            border-bottom: 1px dotted #ffaa50;
-        }
-        .Yes:hover {
-            background-color: transparent;
-            color: #ffaa50;
-        }
+.tab-content {
+  background-size: cover;
+  min-width: 100vw; /* changed to viewport units */
+  min-height: 100vh;
+  background-repeat: no-repeat;
+}
+/*For the Email Links*/
+.homeEmailLinks {
+  color: white;
+  font-size: clamp(1rem, 2.2vw, 1.8rem);
+  font-weight: normal;
+  margin: 0.8rem 0;
+}
+.Yes /*I ran out of class names but this is for editiing the links to the emails*/ {
+  color: white;
+  font-size: large; /* keep original, but wrap */
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  border-bottom: 1px dotted #ffaa50;
+}
+.Yes:hover {
+  background-color: transparent;
+  color: #ffaa50;
+}
 
-        /* FOr the footer */
-        footer 
-        {
-            background-color: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(4px);
-            padding: 30px 16px 20px;
-            margin-top: 40px;
-            border-top: 3px solid #ffaa50;
-        }
-        address 
-        {
-            font-style: normal;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            margin: 15px 0;
-        }
+/* FOr the footer */
+footer {
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  padding: 30px 16px 20px;
+  margin-top: 40px;
+  border-top: 3px solid #ffaa50;
+}
+address {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin: 15px 0;
+}
 
-        h3.Foot, h5.Foot 
-        {
-            font-size: clamp(1.1rem, 2.8vw, 2rem);
-            text-align: center;
-        }
+h3.Foot,
+h5.Foot {
+  font-size: clamp(1.1rem, 2.8vw, 2rem);
+  text-align: center;
+}
 
-        /* Some Responsiveness for small screens */
-        @media (max-width: 600px) 
-        {
-            .myHead 
-            {
-                gap: 0.5rem 0.8rem;
-            }
-            a {
-                white-space: normal;      /* allow multi-word links to stack */
-                font-size: 1.1rem;
-                padding: 4px 8px;
-            }
-            .MainHeader 
-            {
-                margin-top: 0.5rem;
-            }
-            button.myButton 
-            {
-                min-width: 160px;
-                padding: 10px 16px;
-            }
-            .Reel_container 
-            {
-                padding: 10px 8px;
-            }
-        }
+/* Some Responsiveness for small screens */
+@media (max-width: 600px) {
+  .myHead {
+    gap: 0.5rem 0.8rem;
+  }
+  a {
+    white-space: normal; /* allow multi-word links to stack */
+    font-size: 1.1rem;
+    padding: 4px 8px;
+  }
+  .MainHeader {
+    margin-top: 0.5rem;
+  }
+  button.myButton {
+    min-width: 160px;
+    padding: 10px 16px;
+  }
+  .Reel_container {
+    padding: 10px 8px;
+  }
+}
 
-        /* smooth iframe on very tiny screens */
-        @media (max-width: 400px) 
-        {
-            #reel iframe {
-                aspect-ratio: 1 / 1.2;    /* keep proportion */
-            }
-        }
+/* smooth iframe on very tiny screens */
+@media (max-width: 400px) {
+  #reel iframe {
+    aspect-ratio: 1 / 1.2; /* keep proportion */
+  }
+}
 
-        /* We making sure that  "Welcome to RAGA Inc" banner doesn't overflow */
-        h2.MainHeader 
-        {
-            overflow-wrap: break-word;
-            hyphens: auto;
-        }
+/* We making sure that  "Welcome to RAGA Inc" banner doesn't overflow */
+h2.MainHeader {
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
 
-        footer a 
-        {
-            font-size: inherit;
-        }
-/*************************************************END THE HOME PAGE***************************************************************************************************/        
+footer a {
+  font-size: inherit;
+}
+/*************************************************END THE HOME PAGE***************************************************************************************************/
