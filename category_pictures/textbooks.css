@@ -17,10 +17,10 @@
 
         main 
         {
-            max-width: 1400px;
+            max-width: 100%;
             margin: 0 auto;
             padding: 0 20px;
-            width: 100%;
+            
             flex: 1;
         }
 
@@ -73,7 +73,7 @@
         .details img 
         {
             width: 100%;
-            height: 300px;
+            height: 100%;
             object-fit: cover;
             margin-bottom: 15px; 
         }
@@ -106,9 +106,10 @@
             margin-bottom: 15px;
         } */
 
-        .top h3 {
+        .top h3 
+        {
             font-size: 2rem;
-            color: #ffaa50;
+            color: black;
             min-width: 100px;
         }
 
