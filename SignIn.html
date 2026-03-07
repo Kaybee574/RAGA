@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Let's get you signed in</title>
-    <script src="index.js" defer></script>
+    <!-- <link rel="stylesheet" href="style.css"> -->
 
     <style>
       body {
@@ -233,6 +233,19 @@
         display: inline-block;
         width: 100%;
       }
+
+      .formrow small{
+        color: red;
+        display: none;
+      }
+
+      .formrow.error small{
+        display: block;
+      }
+
+      .formrow.error input{
+        border-color: red;
+}
     </style>
   </head>
 
@@ -248,8 +261,14 @@
               method="post"
               class="flex-form signin-form"
             >
+            <div class="formrow">
               <label for="email">Email</label><br />
               <input type="email" id="email" name="email" required /><br />
+
+              <small>Error message</small>
+            </div>
+            
+            <div class="formrow">
               <label for="password">Password</label><br />
               <input
                 type="password"
@@ -257,6 +276,10 @@
                 name="password"
                 required
               /><br />
+
+              <small>Error message</small>
+              </div>
+              
               <br />
               <section class="SectionButton">
                 <button type="submit" class="myButton">Sign In</button>
@@ -272,5 +295,7 @@
 
       <div class="right"></div>
     </div>
+
+    <script src="index.js" defer></script>
   </body>
 </html>

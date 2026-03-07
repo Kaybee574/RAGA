@@ -108,13 +108,16 @@ function validateInputs() {
 function checkInputs() {
   const emailValue = email.value.trim();
   const passwordValue = password.value.trim();
+  let isValid = true;
 
   if (emailValue === "") {
     //calls a function that returns an error message
     setErrorFor(email, "Email cannot be blank");
+    isValid = false;
   } else if (!isEmail(emailValue)) {
     //checks the validity of the email through a function that checks for the syntax
     setErrorFor(email, "Email is invalid");
+    isValid = false;
   } else {
     //calls the function if the email is valid
     setSuccessFor(email);
@@ -123,10 +126,15 @@ function checkInputs() {
   if (passwordValue === "") {
     //calls a function that returns an error message
     setErrorFor(password, "Password cannot be blank");
+    isValid = false;
   } else {
     setSuccessFor(password);
+  }
+
+  if (isValid){
     window.location.href = "Explore.html"; // Page Redirect
   }
+  
 }
 
 function checkEmail() {
