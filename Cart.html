@@ -105,7 +105,9 @@
         background-color: #ff8c69;
       }
 
+      /* Cart styling */
       .empty-cart {
+        display: none;
         text-align: center;
         padding: 50px;
         color: #666;
@@ -134,7 +136,7 @@
       </header>
 
       <section class="MainCart">
-        <article class="cart-item">
+        <article class="cart-item" data-price="450">
           <div class="cart-item-details">
             <p class="cart-item-title">48 Laws of Power</p>
             <p class="cart-item-seller">Seller: g24c0029@ru.ac.za</p>
@@ -143,6 +145,7 @@
           <div>
             <label for="quantity1">Qty:</label>
             <select id="quantity1" name="quantity1" style="padding: 5px">
+              <option value="0">0</option>
               <option value="1" selected>1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -150,7 +153,7 @@
           </div>
         </article>
 
-        <article class="cart-item">
+        <article class="cart-item" data-price="7500">
           <div class="cart-item-details">
             <p class="cart-item-title">Iphone 13</p>
             <p class="cart-item-seller">Seller: g24d0045@ru.ac.za</p>
@@ -159,13 +162,14 @@
           <div>
             <label for="quantity2">Qty:</label>
             <select id="quantity2" name="quantity2" style="padding: 5px">
+              <option value="0">0</option>
               <option value="1" selected>1</option>
               <option value="2">2</option>
             </select>
           </div>
         </article>
 
-        <article class="cart-item">
+        <article class="cart-item" data-price="350">
           <div class="cart-item-details">
             <p class="cart-item-title">Nike Bag</p>
             <p class="cart-item-seller">Seller: g22e0078@ru.ac.za</p>
@@ -174,6 +178,7 @@
           <div>
             <label for="quantity3">Qty:</label>
             <select id="quantity3" name="quantity3" style="padding: 5px">
+              <option value="0">0</option>
               <option value="1" selected>1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -184,7 +189,7 @@
         </article>
 
         <div class="cart-total">
-          <h3>Total: <span>R8300.00</span></h3>
+          <h3>Total: <span id="cart-total-amount">R8300.00</span></h3>
           <a href="checkout.html" class="checkout-button"
             >Proceed to Checkout</a
           >
@@ -202,5 +207,38 @@
         >← Continue Shopping</a
       >
     </footer>
+
+    <script>
+      function recalculateTotal() {
+        const cartItems = document.querySelectorAll(".cart-item");
+        let total = 0;
+
+        cartItems.forEach((item) => {
+          const price = parseFloat(item.dataset.price);
+          const qty = parseInt(item.querySelector("select").value);
+          total += price * qty;
+        });
+        /* Update the total on screen */
+        document.getElementById("cart-total-amount").textContent =
+          "R" + total.toLocaleString("en-ZA", { minimumFractionDigits: 2 });
+
+        const mainCart = document.querySelector(".MainCart:not(.empty-cart)");
+        const emptyCart = document.querySelector(".empty-cart");
+
+        if (total === 0) {
+          mainCart.style.display = "none";
+          emptyCart.style.display = "block";
+        } else {
+          mainCart.style.display = "block";
+          emptyCart.style.display = "none";
+        }
+      }
+
+      recalculateTotal();
+      /* Listener for qty dropdown menu options */
+      document.querySelectorAll("select").forEach((select) => {
+        select.addEventListener("change", recalculateTotal);
+      });
+    </script>
   </body>
 </html>
