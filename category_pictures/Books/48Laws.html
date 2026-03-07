@@ -1,9 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
+    <link rel="stylesheet" href="../../GlobalHeader.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+    .bottom
+    {
+      flex: 1;
+      background-color: rgb(250, 171, 106) ;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      padding: 10px; 
+      font-size: x-large;  
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;   
+    }
+
+    .myFoot
+    {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      padding: 0;
+    }        
+    .top
+    {
+      max-width: 100%;
+      flex: 1;
+      background-color: rgb(250, 171, 106);
+      display: flex;
+      gap: 50px;
+      justify-content: center;
+      padding: 10px;
+    }
+
+        input
+        {
+            width: 80%;
+            height: 10%;
+        }
+    .icon
+    {
+      height: 25px;
+      width: 25px;
+    }    
+
+
         .slider img
         {
             display: none;
@@ -57,6 +101,44 @@
       
 <main>
     <body>
+        <header>
+            <div class="myFoot">
+                <div class="top">
+                    <h3>Raga</h3>
+                    <input type="text" placeholder="Looking for..." class="search-input">
+                    <button class="search-button">Go</button>
+                    <a href="Cart.html"><img class="icon" src="../../Icons/shopping-cart.png" alt="Shopping cart"></a>
+                </div>
+
+                <div class="bottom">
+                    <section class="links">
+                        <a href="../../home.html" target="mainFrame">Home</a>
+                    </section>
+                    <section class="links">
+                        <a href="../../AboutUs.html" target="mainFrame">About Us</a>
+                    </section>
+                    <section class="links">
+                        <a href="../../sell.html" target="mainFrame">Sell</a>
+                    </section>
+                    <section class="links">
+                        <a href="../../Categories.html" target="mainFrame">Categories</a>
+                    </section>
+                    <section class="links">
+                        <a href="../../Explore.html" target="mainFrame">Explore</a>
+                    </section>
+                    <section class="links">
+                        <a href="../../Reviews.html" target="mainFrame">User reviews</a>            
+                    </section>
+                    <section class="links">
+                        <a href="../../SignIn.html" target="mainFrame">Sign In</a>
+                    </section>
+                    <section class="links">
+                        <a href="../../SignUp.html" target="mainFrame">Sign Up</a>
+                    </section>
+                </div>
+            </div>
+        </header>
+
         <div class = "slider">
             <div class="slides">
                 <img class="slide" src="Book1.webp">
