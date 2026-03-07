@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mainCss.css">
+    <style>
+        input
+        {
+            height: 30px;
+            width: fit-content;
+            padding: 10px;
+        }
+        .addItem
+        {
+            display: flex;
+            
+        }
+
+        .addItem > *
+        {
+            flex: 1;
+        }        
+        .category-card 
+        {
+            text-align: center;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .category-card:hover 
+        {
+            background-color: #ffaa50;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .page-header 
+        {
+            text-align: center;
+            color: #ffaa50;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        /*This puts everything to the "very top" and makes sure there is no overflow of elements*/        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body 
+        {
+            font-family: Arial, sans-serif;
+            background-color: white;
+        }
+
+        main 
+        {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1 
+        {
+            text-align: center;
+            margin: 40px 0;
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        .categories-container 
+        {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .Categories 
+        {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .category-card 
+        {
+            flex: 0 1 auto;
+            min-width: 300px;
+            max-width: 450px;
+        }
+
+        .category-card img 
+        {
+            width: 100%;
+            height: auto;
+            max-width: 450px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .category-card p 
+        {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+
+
+        
+        .top {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .bottom {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+
+
+        .myContainer
+        {
+            display: flex;
+        }   
+        .basicInfo
+        {
+            font-size: xx-large;
+            display: grid;
+            border: 1px solid black;
+            border-radius: 2em;
+            flex-wrap: wrap;
+            padding: 20px;              
+            margin: 20px 0;             
+            background-color: rgb(235, 235, 235);
+        } 
+        .basicInfo1
+        {
+            display: flex;
+            
+            justify-content: space-between;
+            box-sizing: border-box;
+            flex-wrap: wrap;
+            gap: 20px;                  
+        }
+
+        .basicInfo1 img
+        {
+            width: 180px;              
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            justify-content: left;
+        }
+        .textInfo
+        {
+            display: grid;
+            justify-content: left;
+            gap: 6px;                   
+        }
+
+        .moreDetails
+        {
+            display: flex;
+            justify-content: space-between;
+            padding: 30px 0;             
+            gap: 20px;                   
+            flex-wrap: wrap;             
+            
+        }
+
+        .stats
+        {
+            background-color: rgb(235, 235, 235);
+            border: 1px solid black;
+            border-radius: 8px;
+            height: auto;
+            max-width: 300px;
+            width: 300px;
+            padding: 20px;                
+            text-align: center;            
+            flex: 1 1 250px;               
+        }
+
+        
+        @media screen and (max-width: 850px) 
+        {
+            .basicInfo1 {
+                justify-content: center;    /* center content when wrapped */
+                text-align: center;
+            }
+            .textInfo {
+                justify-content: center;
+                text-align: center;
+            }
+            .basicInfo1 img {
+                margin: 0 auto;             /* center image if alone in row */
+            }
+            .edit-Infromation {
+                margin: 0 auto;              /* center button when wrapped */
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .moreDetails {
+                justify-content: center;     /* center stat cards */
+            }
+            .stats {
+                max-width: 100%;              /* take full width on small */
+                width: 100%;
+            }
+            .basicInfo 
+            {
+                padding: 15px;
+            }
+            .basicInfo1 
+            {
+                flex-direction: column;       /* stack vertically on phones */
+                
+            }
+        }
+
+        .edit-Infromation 
+        {
+            padding: 10px 20px;
+            border: 1px solid black;
+            border-radius: 30px;
+            width: fit-content;
+            height: fit-content;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+            border: 1px solid transparent;
+        }
+        .edit-Infromation:hover 
+        {
+            background-color: #e68f3c;
+        }
+        .reviw-articles
+        {
+            display: grid;
+            gap: 10px;
+            border: 1px solid black;
+            border-radius: 8px;
+            justify-content: left;
+            font-size: larger;
+            font-family: inherit;
+            padding: 10px;   
+        }
+        .addInventory
+        {
+            color: blueviolet;
+        }
+
+html {
+    scroll-behavior: smooth;
+}        
+
+    </style>
+</head>
+
+<!--this page wil have the links that will allow users to add their items that they
+wish to sell on the website-->
+<body>
+  
+  <header>
+        <!-- THIS DESIGN WAS INFLUENCED BY THE SUPERBALIST WEBSITE, I REFERENCED THEIR HEADER -->
+        <div class="myFoot">
+            <div class="top">
+              <h2>Raga</h2>
+            </div>
+            <div class="bottom">
+                <p>Add a new item to your inventory</p>            
+            </div>
+        <div>
+  </header>
+
+    <main>
+        <br>
+        <p>Create a new Listing</p>
+        <br>
+        <h3>Item information</h3>
+        <section class="basicInfo">
+            <form action="" method="post" class="add-item-form">
+
+                <section class="addItem">
+                    <label for="name">Item Name</label>
+                        <input
+                            type="text"
+                            id="itemName"
+                            name="itemName"
+                            placeholder="Enter the name of your item"
+                            required/>
+                </section>
+
+                <section class="addItem">
+                    <label for="name">Price</label>
+                        <input
+                            type="text"
+                            id="itemPrice"
+                            name="itemPrice"
+                            placeholder="Enter the price of the product"
+                            required/>
+                </section>
+
+                <section class="addItem">
+                    <label for="name">Condition</label>
+                        <input
+                            type="text"
+                            id="itemCondition"
+                            name="itemCondition"
+                            placeholder="Enter The condition of your product"
+                            required/>
+                </section>
+
+                <section class="addItem">
+                    <label for="name">General Comments</label>
+                        <input
+                            type="text"
+                            id="itemComment"
+                            name="itemComment"
+                            placeholder="enter additional informatioin about the product"
+                            required/>
+
+                </section>
+                    </form>
+        </section>    
+        
+        <h3>Add Pictures</h3>
+        <section class="basicInfo">
+            <form action="" method="post" class="add-item-form">
+                <section>
+
+                </section>
+            </form>
+        </section>
+
+    </main>    
+</body>
+</html>
