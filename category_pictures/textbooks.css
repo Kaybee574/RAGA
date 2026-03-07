@@ -5,8 +5,6 @@
             box-sizing: border-box;
         }
 
-
-
         /* Textbook grid section */
         .textbookMainSection 
         {
@@ -95,33 +93,12 @@
             color: black;
             min-width: 100px;
         }
-
-
-
     input
     {
     flex: 1;
       height: 25px;
       width: 750px;
     }
-
-/*         .search-input:focus {
-            outline: none;
-            border-color: #ffaa50;
-        }
-
-        .search-button {
-            padding: 12px 25px;
-            background-color: #ffaa50;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            color: white;
-            font-weight: bold;
-            font-size: 1rem;
-            transition: background-color 0.3s;
-        } */
-
         .search-button:hover {
             background-color: #ff9900;
         }
