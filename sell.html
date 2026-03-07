@@ -6,6 +6,15 @@
     <link rel="stylesheet" href="mainCss.css">
     <style>
         
+        .inventoryButton
+        {
+            width: max-content;
+            height: 30px;
+            padding: 30px;
+            border-radius: 8px;
+            color: white;
+            background-color: #ffaa50;
+        }
         .category-card 
         {
             text-align: center;
@@ -31,6 +40,11 @@
             color: #ffaa50;
             font-size: 2.5rem;
             margin-bottom: 30px;
+        }
+        .myButton
+        {
+            display: flex;
+            justify-content: center;
         }
 
         /*This puts everything to the "very top" and makes sure there is no overflow of elements*/        
@@ -373,10 +387,11 @@ wish to sell on the website-->
         <h3 id="inventory">Current Inventory</h3>
         
         <section class="basicInfo">
-            <p>You currently have nothing in the inventory</p>
-            <h3>
-            <a href="" class="addInventory">CLick here to add an item to the inventory</a>
-            </h3>
+            <p id ="DisplayInventory">You currently have nothing in the inventory</p>
+
+            <section class="myButton">
+                <button onclick="window.location.href='addToInventory.html'" class="inventoryButton">Add to inventory</button>
+            </section>
         </section>
 
         <h3 id="history" >History</h3>
