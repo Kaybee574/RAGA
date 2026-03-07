@@ -27,6 +27,6 @@ function changeBackground()
     }
 }
 
-setInterval(changeBackground, 7000); // changes every 7 seconds
+setInterval(changeBackground, 5000); // changes every 5 seconds
 
 changeBackground(); // load first image immediately
