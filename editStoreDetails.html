@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Up - RAGA Inc</title>
     <!-- External CSS --> 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css"/>
 
     <style>
       form {
@@ -80,30 +80,32 @@
         border-color: #ffaa50;
       }
 
-      .myButton a:hover {
+      .myButton a:hover 
+      {
         background: transparent;
       }
-      .buttonSection {
+      .buttonSection 
+      {
         display: flex;
         justify-content: center;
+        gap: 20px;
       }
     </style>
   </head>
   <body>
     <div class="signup-container">
       <header>
-        <h1>Sign Up</h1>
-        <p class="site-tagline">Join the RAGA community today!</p>
+        <h1>Modify your details</h1>
       </header>
       <!-- Sign up form with Flexbox layout -->
-      <form action="" method="post" class="flex-form signup-form">
+      <form action="" method="post" class="edit-details-form">
         <div class="formrow">
-          <label for="name">Full Name:</label><br />
+          <label for="name">Store Name:</label><br />
           <input
             type="text"
-            id="name"
+            id="storeName"
             name="name"
-            placeholder="Enter your full name"
+            placeholder="Enter your Store Name"
             required
           />
           <small>Error message</small>
@@ -122,69 +124,40 @@
         </div>
         <br />
         <div class="formrow">
-          <label for="password">Password:</label><br />
+          <label for="password">Location</label><br />
           <input
-            type="password"
-            id="password"
-            name="password"
-            minlength="8"
-            maxlength="16"
+            type="text"
+            id="location"
+            name="location"
+
             required
-            pattern="(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9]{8,16}"
-            title="Password must be 8-16 characters, contain at least one uppercase letter and one number"
-            placeholder="Enter password"
+            title="Enter Your ideal meet up location"
+            placeholder="Enter your Location"
           />
 
           <small>Error message</small>
         </div>
 
         <div class="formrow">
-          <label for="confirm_password">Confirm Password:</label><br />
+          <label for="Location">Location</label><br />
           <input
-            type="password"
-            id="confirm_password"
-            name="confirm_password"
-            placeholder="Re-enter password"
+            type="text"
+            id="comments"
+            name="comments"
+            placeholder="Just write some more information about your site"
             required
           />
           <small>Error messages</small>
         </div>
 
-        <div class="formrow">
-          <label for="user_type">I want to:</label><br />
-          <select name="user_type" id="user_type" required>
-            <option value="">-- Select account type --</option>
-            <option value="buyer">Buy items (Buyer)</option>
-            <option value="seller">Sell items (Seller)</option>
-            <!-- <option value="both">Both buy and sell</option> -->
-          </select>
-        </div>
-
-        <div class="formrow" style="justify-content: flex-start">
-          <br />
-          <input
-            type="checkbox"
-            id="terms"
-            name="terms"
-            required
-            style="flex: 0 0 auto; width: auto; margin-right: 0.5rem"
-          />
-          <label for="terms" style="flex: 1"
-            >I agree to the <a href="#">Terms and Conditions</a></label
-          >
-        </div>
-
         <div class="formrow" style="justify-content: center">
           <br />
           <section class="buttonSection">
-            <button type="submit" class="myButton">Create Account</button>
+            <button type="submit" id="ConfirmButton">Confirm</button>
+            <button type="submit" id="CancelButton" onclick="window.location.href = 'sell.html'" >Cancel</button>
           </section>
         </div>
       </form>
-      <div class="form-footer">
-        <p>Already have an account? <a href="SignIn.html">Sign In</a></p>
-        <p><a href="forgot_password.html">Forgot Password?</a></p>
-      </div>
     </div>
     <script defer src="index.js"></script>
   </body>
