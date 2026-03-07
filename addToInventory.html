@@ -1,3 +1,7 @@
+<!-- !!!!!!!!!!!!!!!!!!!!!PLEASE COME BACK TO THIS OCDE THE JAVASCRIPT PART, TRY TO PROPERLY UNDERSTAND IT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- NOTES, WITH THE BUTTONS REALLY COME BACK, BECAUSE THE FORM IS TERMINATING BEFORE IT SUBMITS, ADD EVENT LISTENERS!!!!!!!!!!!!!!!!!!! PLEASE DO NOT FORGET -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +24,31 @@
         .addItem > *
         {
             flex: 1;
-        }        
+        } 
+        /*For the Add Pictures*/        
+        .uploadBox
+        {
+            display: flex;
+            padding: 15px;
+            background-color: orange;
+            border: 1px solid black;
+            color: black;
+            cursor: pointer;
+            border-radius: 8px;
+            justify-content: center;
+        }
+
+        .uploadBox input
+        {
+            display: none;
+        }   
+        .myButton
+        {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }     
+
         .category-card 
         {
             text-align: center;
@@ -48,6 +76,7 @@
             margin-bottom: 30px;
         }
 
+
         /*This puts everything to the "very top" and makes sure there is no overflow of elements*/        
         * {
             margin: 0;
@@ -55,11 +84,7 @@
             box-sizing: border-box;
         }
 
-        body 
-        {
-            font-family: Arial, sans-serif;
-            background-color: white;
-        }
+
 
         main 
         {
@@ -76,48 +101,8 @@
             color: #333;
         }
 
-        .categories-container 
-        {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-
-        .Categories 
-        {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .category-card 
-        {
-            flex: 0 1 auto;
-            min-width: 300px;
-            max-width: 450px;
-        }
-
-        .category-card img 
-        {
-            width: 100%;
-            height: auto;
-            max-width: 450px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
-
-        .category-card p 
-        {
-            font-size: 1.2rem;
-            font-weight: 500;
-            margin-top: 10px;
-        }
 
 
-        
         .top {
             display: flex;
             align-items: center;
@@ -125,19 +110,14 @@
             flex-wrap: wrap;
         }
 
-        .bottom {
+        .bottom
+        {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
             margin-top: 20px;
         }
-
-
-
-        .myContainer
-        {
-            display: flex;
-        }   
+  
         .basicInfo
         {
             font-size: xx-large;
@@ -149,53 +129,8 @@
             margin: 20px 0;             
             background-color: rgb(235, 235, 235);
         } 
-        .basicInfo1
-        {
-            display: flex;
-            
-            justify-content: space-between;
-            box-sizing: border-box;
-            flex-wrap: wrap;
-            gap: 20px;                  
-        }
 
-        .basicInfo1 img
-        {
-            width: 180px;              
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            justify-content: left;
-        }
-        .textInfo
-        {
-            display: grid;
-            justify-content: left;
-            gap: 6px;                   
-        }
 
-        .moreDetails
-        {
-            display: flex;
-            justify-content: space-between;
-            padding: 30px 0;             
-            gap: 20px;                   
-            flex-wrap: wrap;             
-            
-        }
-
-        .stats
-        {
-            background-color: rgb(235, 235, 235);
-            border: 1px solid black;
-            border-radius: 8px;
-            height: auto;
-            max-width: 300px;
-            width: 300px;
-            padding: 20px;                
-            text-align: center;            
-            flex: 1 1 250px;               
-        }
 
         
         @media screen and (max-width: 850px) 
@@ -234,43 +169,83 @@
                 
             }
         }
-
-        .edit-Infromation 
+        html 
         {
-            padding: 10px 20px;
-            border: 1px solid black;
-            border-radius: 30px;
-            width: fit-content;
-            height: fit-content;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.2s;
-            border: 1px solid transparent;
+            scroll-behavior: smooth;
+        }     
+        
+        /* New styles for image preview section */
+        .preview-container 
+        {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
         }
-        .edit-Infromation:hover 
+        
+        .preview-item {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .preview-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .remove-image 
+        {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: rgba(255, 0, 0, 0.7);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+        
+        .remove-image:hover 
+        {
+            background: rgba(255, 0, 0, 0.9);
+        }
+        
+        .submit-btn 
+        {
+            background-color: orange;
+            border: 1px solid black;
+            height: max-content;
+            width: max-content;
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            
+            transition: background 0.2s;
+        }
+        
+        .submit-btn:hover 
         {
             background-color: #e68f3c;
         }
-        .reviw-articles
-        {
-            display: grid;
-            gap: 10px;
-            border: 1px solid black;
-            border-radius: 8px;
-            justify-content: left;
-            font-size: larger;
-            font-family: inherit;
-            padding: 10px;   
+        
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
         }
-        .addInventory
-        {
-            color: blueviolet;
-        }
-
-html {
-    scroll-behavior: smooth;
-}        
-
     </style>
 </head>
 
@@ -294,12 +269,12 @@ wish to sell on the website-->
         <br>
         <p>Create a new Listing</p>
         <br>
-        <h3>Item information</h3>
+        <h1>Item information</h1>
         <section class="basicInfo">
-            <form action="" method="post" class="add-item-form">
+            <form id="listingForm" action="/submit-listing" method="post" enctype="multipart/form-data">
 
                 <section class="addItem">
-                    <label for="name">Item Name</label>
+                    <label for="itemName">Item Name</label>
                         <input
                             type="text"
                             id="itemName"
@@ -309,47 +284,237 @@ wish to sell on the website-->
                 </section>
 
                 <section class="addItem">
-                    <label for="name">Price</label>
+                    <label for="itemPrice">Price</label>
                         <input
-                            type="text"
+                            type="number"
                             id="itemPrice"
                             name="itemPrice"
                             placeholder="Enter the price of the product"
+                            min="0"
+                            step="0.01"
                             required/>
                 </section>
 
                 <section class="addItem">
-                    <label for="name">Condition</label>
-                        <input
-                            type="text"
-                            id="itemCondition"
-                            name="itemCondition"
-                            placeholder="Enter The condition of your product"
-                            required/>
+                    <label for="itemCondition">Condition</label>
+                        <select id="itemCondition" name="itemCondition" required style="height: 50px; padding: 10px;">
+                            <option value="">Select condition</option>
+                            <option value="New">New</option>
+                            <option value="Like New">Like New</option>
+                            <option value="Excellent">Excellent</option>
+                            <option value="Good">Good</option>
+                            <option value="Fair">Fair</option>
+                            <option value="Poor">Poor</option>
+                        </select>
                 </section>
 
                 <section class="addItem">
-                    <label for="name">General Comments</label>
-                        <input
-                            type="text"
+                    <label for="itemComment">General Comments</label>
+                        <textarea
                             id="itemComment"
                             name="itemComment"
-                            placeholder="enter additional informatioin about the product"
-                            required/>
-
-                </section>
-                    </form>
-        </section>    
-        
-        <h3>Add Pictures</h3>
-        <section class="basicInfo">
-            <form action="" method="post" class="add-item-form">
-                <section>
-
+                            placeholder="Enter additional information about the product"
+                            rows="4"
+                            style="width: 100%; padding: 10px;"
+                            required></textarea>
                 </section>
             </form>
-        </section>
+            </section>
 
-    </main>    
+                <!-- Updated Image Upload Section -->
+                <h1>Add Pictures</h1>
+            <form id="listingForm" action="/submit-listing" method="post" enctype="multipart/form-data">
+                <section class="basicInfo">
+                    <label class="uploadBox">
+                        Add Images
+                        <input 
+                            type="file" 
+                            id="imageInput"
+                            name="images" 
+                            accept="image/*" 
+                            multiple
+                        >
+                    </label>
+                    
+                    <!-- Image Preview Container -->
+                    <div id="previewContainer" class="preview-container"></div>
+                    
+                    <!-- Hidden input to track selected files for form submission -->
+                    <div id="fileDataContainer"></div>
+                </section>
+
+                <section class="myButton">
+
+                    <button type="submit" class="submit-btn" id="submit-btn">Create Listing</button>
+                    <button class="submit-btn" id="cancel-button">Cancel Listing</button>
+                </section>
+            </form>
+        </section>    
+    </main>
+
+    <script>
+    
+    
+        
+        
+        // Image preview and management functionality
+        const imageInput = document.getElementById('imageInput');
+        const previewContainer = document.getElementById('previewContainer');
+        const fileDataContainer = document.getElementById('fileDataContainer');
+        // Store files for form submission
+        let selectedFiles = [];
+
+        // Handle file selection
+        imageInput.addEventListener('change', function(event) {
+            const files = Array.from(event.target.files);
+            
+            // Validate file types and sizes
+            const validFiles = files.filter(file => {
+                const isValidType = file.type.startsWith('image/');
+                const isValidSize = file.size <= 5 * 1024 * 1024; // 5MB max
+                
+                if (!isValidType) {
+                    alert(`${file.name} is not an image file. Please select only images.`);
+                    return false;
+                }
+                if (!isValidSize) {
+                    alert(`${file.name} is too large. Maximum size is 5MB.`);
+                    return false;
+                }
+                return true;
+            });
+
+            // Add valid files to selectedFiles array
+            selectedFiles = [...selectedFiles, ...validFiles];
+            
+            // Display previews for all selected files
+            displayPreviews();
+            
+            // Create hidden inputs for form submission
+            updateFormData();
+            
+            // Clear the input so the same file can be selected again if needed
+            imageInput.value = '';
+        });
+
+        // Display all image previews
+        function displayPreviews() {
+            previewContainer.innerHTML = '';
+            
+            selectedFiles.forEach((file, index) => {
+                const reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    const previewItem = document.createElement('div');
+                    previewItem.className = 'preview-item';
+                    previewItem.dataset.index = index;
+                    
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.alt = `Preview ${index + 1}`;
+                    
+                    const removeBtn = document.createElement('button');
+                    removeBtn.className = 'remove-image';
+                    removeBtn.innerHTML = '×';
+                    removeBtn.onclick = function() {
+                        removeImage(index);
+                    };
+                    
+                    previewItem.appendChild(img);
+                    previewItem.appendChild(removeBtn);
+                    previewContainer.appendChild(previewItem);
+                };
+                
+                reader.readAsDataURL(file);
+            });
+        }
+
+        // Remove an image from selection
+        function removeImage(index) {
+            selectedFiles.splice(index, 1);
+            displayPreviews();
+            updateFormData();
+        }
+
+        // Update form data with selected files for submission
+        function updateFormData() {
+            // Clear previous hidden inputs
+            fileDataContainer.innerHTML = '';
+            
+            // Create a DataTransfer object to handle files
+            const dataTransfer = new DataTransfer();
+            selectedFiles.forEach(file => {
+                dataTransfer.items.add(file);
+            });
+            
+            // Update the file input with all selected files
+            imageInput.files = dataTransfer.files;
+        }
+
+        // Form submission handling
+        document.getElementById('listingForm').addEventListener('submit', function(event) {
+            // Validate that at least one image is selected
+            if (selectedFiles.length === 0) {
+                event.preventDefault();
+                alert('Please select at least one image for your listing.');
+                return;
+            }
+            
+            // You can add additional validation here if needed
+            console.log('Form submitted with', selectedFiles.length, 'images');
+            
+            // The form will submit normally with all files
+        });
+
+        // Optional: Preview existing form data before submission
+        function previewFormData() {
+            console.log('Item Name:', document.getElementById('itemName').value);
+            console.log('Price:', document.getElementById('itemPrice').value);
+            console.log('Condition:', document.getElementById('itemCondition').value);
+            console.log('Comments:', document.getElementById('itemComment').value);
+            console.log('Number of Images:', selectedFiles.length);
+        }
+
+
+
+        // HERE I AM JUST TRYING TO VALIDATE THESE BUTTONS
+        const submitButton = document.getElementById("submit-btn");
+        const cancelButton = document.getElementById("cancel-button");
+        
+        submitButton.onclick = function(event) 
+        {
+            event.preventDefault();
+            if (confirm("Submit this form?")) 
+            {
+                alert("Submitted!");
+                window.location.href = "sell.html";
+            } 
+            else 
+            {
+                alert("Cancelled");
+                return false;
+            }
+        };
+        
+        cancelButton.onclick = function(event) 
+        {
+            event.preventDefault();
+            // Okay so here this built in function stops the form from submitting before we exit
+            if (confirm("Are you Sure you want to cancel?")) 
+            {
+                window.location.href = "sell.html";
+            } 
+            else 
+            {
+                alert(" Yoou can Continue Listing");
+                return false;
+
+            }
+        };    
+        ////////////////////////////////////////////////////////////////////////
+
+
+
+    </script>
 </body>
 </html>
