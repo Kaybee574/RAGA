@@ -125,7 +125,7 @@ function checkInputs() {
     setErrorFor(password, "Password cannot be blank");
   } else {
     setSuccessFor(password);
-    windows.location.href = "Explore.html"; // Page Redirect
+    window.location.href = "Explore.html"; // Page Redirect
   }
 }
 
