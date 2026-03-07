@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- this external style sheet is responsible for styling my header, the one with the links -->
+    <link rel="stylesheet" href="mainCss.css">
+    <link rel="stylesheet" href="GlobalHeader.css">
+    
+    <style>
+        .category-card 
+        {
+            text-align: center;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .category-card:hover 
+        {
+            background-color: #ffaa50;
+        }
+
+        a 
+        {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Putting the cards of the pcitrues in media queries for responsive design */
+        @media screen and (max-width: 1200px) 
+        {
+            .category-card img 
+            {
+                height: 400px;
+                width: 400px;
+            }
+        }
+
+        @media screen and (max-width: 900px) 
+        {
+            .category-card img 
+            {
+                height: 300px;
+                width: 300px;
+            }
+        }
+
+        @media screen and (max-width: 600px) 
+        {
+            .category-card img 
+            {
+                height: 250px;
+                width: 250px;
+            }
+
+            .Categories 
+            {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .page-header 
+        {
+            text-align: center;
+            color: #ffaa50;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            
+        }
+
+        /*This puts everything to the "very top" and makes sure there is no overflow of elements*/        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body 
+        {
+            font-family: Arial, sans-serif;
+            background-color: #cfcece;
+            
+        }
+        /*COME BACK HERE AND FIX THE BLEEDING OF THE MAIN HEADER*/
+        main 
+        {
+            max-width: 100%;
+            margin: 0 auto;
+            box-sizing: border-box;
+            
+        }
+
+        h1 
+        {
+            text-align: center;
+            margin: 40px 0;
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        .categories-container 
+        {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .Categories 
+        {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .category-card 
+        {
+            flex: 0 1 auto;
+            min-width: 300px;
+            max-width: 450px;
+        }
+
+        .category-card img 
+        {
+            width: 100%;
+            height: auto;
+            max-width: 450px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .category-card p 
+        {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+
+        /*Some more Responsive adjustments */
+        @media screen and (max-width: 768px) 
+        {
+            h1 {
+                font-size: 2rem;
+                margin: 30px 0;
+            }
+
+            .category-card 
+            {
+                min-width: 250px;
+            }
+
+            .category-card p 
+            {
+                font-size: 1rem;
+            }
+
+        }
+
+        @media screen and (max-width: 480px) 
+        {
+            main 
+            {
+                padding: 0 15px;
+            }
+
+            h1 
+            {
+                font-size: 1.8rem;
+                margin: 20px 0;
+            }
+
+            .Categories 
+            {
+                gap: 20px;
+            }
+
+            .category-card 
+            {
+                min-width: 100%;
+            }
+        }
+
+        
+        .top {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            max-width: 100%;
+        }
+
+        .icon {
+            width: 30px;
+            height: 30px;
+        }
+
+        .search-input 
+        {
+            flex: 1;
+            min-width: 200px;
+            padding: 8px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <div class="myFoot">
+                <div class="top">
+                    <h3>Raga</h3>
+                    <input type="text" placeholder="Looking for..." class="search-input">
+                    <button class="search-button">Go</button>
+                    <a href="Cart.html"><img class="icon" src="Icons/shopping-cart.png" alt="Shopping cart"></a>
+                </div>
+
+                <div class="bottom">
+                    <section class="links">
+                        <a href="home.php" target="mainFrame">Home</a>
+                    </section>
+                    <section class="links">
+                        <a href="AboutUs.html" target="mainFrame">About Us</a>
+                    </section>
+                    <section class="links">
+                        <a href="sell.html" target="mainFrame">Sell</a>
+                    </section>
+                    <section class="links">
+                        <a href="Categories.html" target="mainFrame">Categories</a>
+                    </section>
+                    <section class="links">
+                        <a href="Explore.html" target="mainFrame">Explore</a>
+                    </section>
+                    <section class="links">
+                        <a href="Reviews.html" target="mainFrame">User reviews</a>            
+                    </section>
+                    <section class="links">
+                        <a href="SignIn.html" target="mainFrame">Sign In</a>
+                    </section>
+                    <section class="links">
+                        <a href="SignUp.html" target="mainFrame">Sign Up</a>
+                    </section>
+                </div>
+            </div>
+        </header>
+
+        <h1>How Can We Help You Today?</h1>
+        
+        <div class="categories-container">
+            <section class="Categories">
+                <a href="category_pictures/textbooks.html" class="category-card">
+                    <img src="category_pictures/Textbooks.jpg" alt="Textbooks">
+                    <p>Textbooks & Academic Materials</p>
+                </a>
+
+                <a href="category_pictures/Electronics.html" class="category-card">
+                    <img src="category_pictures/Electronics.jpg" alt="Electronics">
+                    <p>Electronics</p>
+                </a>
+            </section>
+
+            <section class="Categories">
+                <a href="category_pictures/Fashion.html" class="category-card">
+                    <img src="category_pictures/Fashion.jpg" alt="Fashion">
+                    <p>Fashion</p>
+                </a>
+
+                <a href="category_pictures/Cosmetics.html" class="category-card">
+                    <img src="category_pictures/Cosmetics.jpg" alt="Cosmetics">
+                    <p>Cosmetics</p>
+                </a>
+            </section>
+
+            <section class="Categories">
+                <a href="category_pictures/Furniture.html" class="category-card">
+                    <img src="category_pictures/Furniture.jpg" alt="Furniture">
+                    <p>Dorm & Furniture</p>
+                </a>
+
+                <a href="category_pictures/Others.html" class="category-card">
+                    <img src="category_pictures/Others.jpg" alt="Other items">
+                    <p>Other</p>
+                </a>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

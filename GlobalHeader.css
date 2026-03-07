@@ -1,0 +1,148 @@
+      .MainHeader 
+      {
+        font-size: clamp(
+          2.8rem,
+          15vw,
+          150px
+        ); /* This clamp feature makes the font scale up and down based to our own desire, clamp(minimum size, prefered size, maximum size)*/
+        color: #ffaa50;
+        text-align: center;
+        padding: 20px; /* Pretty Self Explainatory*/
+      }      
+
+      a {
+  
+  text-decoration: none; /*THis makes the links not have a line underneath*/
+  font-size: clamp(
+    1.2rem,
+    3vw,
+    2rem
+  ); /*Same as the top, (smallest, medium, largest)*/
+  padding: 6px 12px;
+}
+
+/* This is so that when you visit a link when you come back to it its not purple */
+a:visited 
+{
+  color: black;
+}
+
+
+      /*For the INstagram reels*/
+      .Reel_container 
+      {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 30px 20px;
+        padding: 20px 16px;
+        max-width: 1600px;
+        margin: 0 auto;
+      }
+
+
+/* Tablet Responsive */
+@media screen and (max-width: 768px) {
+    .top {
+        padding: 10px 15px;
+    }
+
+    .top h3 {
+        font-size: 1.5rem;
+    }
+
+    .search-container {
+        order: 3;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .bottom {
+        gap: 10px 15px;
+        padding: 10px;
+    }
+
+    .links a {
+        font-size: 0.9rem;
+    }
+
+    .page-header {
+        font-size: 2rem;
+    }
+}
+/*FOR THE RESPONSIVENESS OF THE MAIN HEADER ONLY*/
+/* Mobile Responsive */
+@media screen and (max-width: 480px) {
+    .top {
+        padding: 10px;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .bottom {
+        display: none; /* Hidden by default on mobile */
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .bottom.active {
+        display: flex; /* Show when active class is added */
+    }
+
+    .links {
+        width: 100%;
+        text-align: center;
+        padding: 8px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .links:last-child {
+        border-bottom: none;
+    }
+
+    .links a {
+        font-size: 1rem;
+        display: block;
+    }
+
+    .page-header {
+        font-size: 1.5rem;
+    }
+
+    .icon {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+/* Small Mobile */
+@media screen and (max-width: 320px) {
+    .top {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .top h3 {
+        text-align: center;
+    }
+
+    .right-section {
+        justify-content: space-between;
+    }
+
+    .search-container {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .search-input,
+    .search-button {
+        width: 100%;
+        border-radius: 4px;
+    }
+}
+      
