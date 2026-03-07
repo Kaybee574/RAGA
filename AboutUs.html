@@ -3,23 +3,110 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--<link rel="stylesheet" href="RuStylish.css" /> -->
     <title>About Us - RAGA Inc Team</title>
     <!--This ensures that the picture and about us info is displayed as seen on the website-->
-    <link rel="stylesheet" href="mainCss.css">
+    
     <style>
+/*CSS CODE COMING FROM THE HOME PAGE*/
+.myHead {
+  display: flex;
+  /* I made the header sticky so that it stays on the same place and not move when the user scrolls it looks kind of... but yeah*/
+  position: sticky;
+  top: 0;
 
-      .team-member {
+  flex-wrap: wrap; /*THis makes my header to wrap around the whole conent that is on my header page*/
+  justify-content: center;
+  gap: 0.8rem 1.8rem;
+  padding: 20px 16px;
+  background-color: rgba(0, 0, 0, 0.5); /* subtle overlay so links pop */
+
+  border-bottom: 2px solid black; /*The bottom of the border of my header to be black*/
+}
+a {
+  color: white;
+  text-decoration: none; /*THis makes the links not have a line underneath*/
+  font-size: clamp(
+    1.2rem,
+    3vw,
+    2rem
+  ); /*Same as the top, (smallest, medium, largest)*/
+  padding: 6px 12px;
+}
+
+/* This is so that when you visit a link when you come back to it its not purple */
+a:visited 
+{
+  color: white;
+}
+
+a:hover {
+  background-color: rgb(255, 203, 143);
+  color: white;
+}
+      /*For the INstagram reels*/
+      .Reel_container 
+      {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 30px 20px;
+        padding: 20px 16px;
+        max-width: 1600px;
+        margin: 0 auto;
+      }
+      #reel 
+      {
+        flex: 1 1 400px; /* letting the 2 reel links ot be 400px each */
+        max-width: 600px;
+        min-width: 500px;
+        height: 600px;
+        display: flex;
+        justify-content: center;
+      }
+#reel iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 600 / 750; /* preserve original proportions */
+  max-width: 600px;
+  border: 0;
+  border-radius: 24px;
+}      
+      .MainHeader 
+      {
+        font-size: clamp(
+          2.8rem,
+          15vw,
+          150px
+        ); /* This clamp feature makes the font scale up and down based to our own desire, clamp(minimum size, prefered size, maximum size)*/
+        color: #ffaa50;
+        text-align: center;
+        padding: 20px; /* Pretty Self Explainatory*/
+      }      
+/*#################################################################################################*/
+      body
+      {
+        font-size: x-large;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        background-color: #666;
+      }
+
+      .team-member 
+      {
         display: flex;
         padding: 20px;
         justify-content: space-evenly;
-        background-color: #eacdf6;
+        background-color: #ffaa50;
         margin-bottom: 20px;
         border-radius: 8px;
         align-items: center;
       }
 
       p {
-        background-color: #eacdf6;
+        display: flex;
+        justify-content: center;
+        background-color: #ffaa50;
         padding: 20px;
         border-radius: 8px;
       }
@@ -35,6 +122,11 @@
         text-align: center;
         margin-bottom: 20px;
       }
+      .intro
+      {
+        display: flex;
+        justify-content: center;
+      }
 
       .intro-text {
         text-align: center;
@@ -49,7 +141,8 @@
         object-fit: cover;
       }
 
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 768px) 
+      {
         .team-member {
           flex-direction: column;
           text-align: center;
@@ -61,17 +154,34 @@
       }
 
       strong {
-        color: #ffaa50;
+        color: black;
         font-size: 1.3rem;
       }
       .intro {
         font-size: 25px;
       }
+
     </style>
   </head>
   <body>
     <!--This has information about each member of the team along with their picture-->
-
+      <!-- This is the header, it contains links going to the different pages -->
+      <header class="myHead">
+        <section><a href="home.html" target="mainFrame">Home</a></section>
+        <section><a href="SignIn.html" target="mainFrame">Sign In</a></section>
+        <section><a href="SignUp.html" target="mainFrame">Sign Up</a></section>
+        <section>
+          <a href="Categories.html" target="mainFrame">Categories</a>
+        </section>
+        <section><a href="Explore.html" target="mainFrame">Explore</a></section>
+        <section><a href="sell.html" target="mainFrame">Sell</a></section>
+        <section>
+          <a href="Reviews.html" target="mainFrame">User reviews</a>
+        </section>
+        <section>
+          <a href="AboutUs.html" target="mainFrame">About Us</a>
+        </section>
+      </header>
     <section id="about-us" class="tab-content">
       <header>
         <h2>Meet our team</h2>
@@ -82,102 +192,154 @@
       </header>
 
       <!--This inserts the picture of each team member along with the required measurements for the photo-->
+      <section class="members">
+        <article class="team-member">
+          <figure>
+            <img
+              src="nigel.jpg"
+              alt="Nigel Qongo, Frontend Lead"
+              width="300"
+              height="300"
+            />
+            <figcaption style="text-align: center; margin-top: 5px">
+              Nigel Qango
+            </figcaption>
+          </figure>
+          <div class="team-info">
+            <p>
+              <strong>Nigel Qango - Frontend Lead</strong><br />
+              Nigel specializes in creating intuitive and responsive user
+              interfaces.<br />
+              Expert in HTML, CSS, and modern frontend frameworks.<br />
+              Focuses on delivering exceptional user experiences across all
+              devices.
+            </p>
+          </div>
+        </article>        
+        <article class="team-member">
+          <figure>
+            <img
+              src="justin.jpg"
+              alt="Justin Mudimbu, Backend Lead"
+              width="300"
+              height="300"
+            />
+            <figcaption style="text-align: center; margin-top: 5px">
+              Justin Mudimbu
+            </figcaption>
+          </figure>
 
-      <article class="team-member">
-        <figure>
-          <img
-            src="justin.jpg"
-            alt="Justin Mudimbu, Backend Lead"
-            width="300"
-            height="300"
-          />
-          <figcaption style="text-align: center; margin-top: 5px">
-            Justin Mudimbu
-          </figcaption>
-        </figure>
+          <!--This paragraph explains a little bit about each team member and their role-->
+          <div class="team-info">
+            <p>
+              <strong>Justin Mudimbu - Backend Lead</strong><br />
+              Justin architect our server-side infrastructure and APIs.<br />
+              Specializes in scalable system design and security
+              implementation.<br />
+              Ensures our platform remains robust and reliable.
+            </p>
+          </div>
+        </article>
 
-        <!--This paragraph explains a little bit about each team member and their role-->
-        <div class="team-info">
-          <p>
-            <strong>Justin Mudimbu - Backend Lead</strong><br />
-            Justin architect our server-side infrastructure and APIs.<br />
-            Specializes in scalable system design and security
-            implementation.<br />
-            Ensures our platform remains robust and reliable.
-          </p>
-        </div>
-      </article>
+        <article class="team-member">
+          <figure>
+            <img
+              src="charmaine.jpg"
+              alt="Charmaine Chikengezha, Database Architect"
+              width="300"
+              height="300"
+            />
+            <figcaption style="text-align: center; margin-top: 5px">
+              Charmaine Chikengezha
+            </figcaption>
+          </figure>
+          <div class="team-info">
+            <p>
+              <strong>Charmaine - Database Architect</strong><br />
+              Charmaine designs and optimizes our database structures.<br />
+              Expert in data modeling and query optimization.<br />
+              Ensures efficient data storage and retrieval for our growing
+              platform.
+            </p>
+          </div>
+        </article>
 
-      <article class="team-member">
-        <figure>
-          <img
-            src="charmaine.jpg"
-            alt="Charmaine Chikengezha, Database Architect"
-            width="300"
-            height="300"
-          />
-          <figcaption style="text-align: center; margin-top: 5px">
-            Charmaine Chikengezha
-          </figcaption>
-        </figure>
-        <div class="team-info">
-          <p>
-            <strong>Charmaine - Database Architect</strong><br />
-            Charmaine designs and optimizes our database structures.<br />
-            Expert in data modeling and query optimization.<br />
-            Ensures efficient data storage and retrieval for our growing
-            platform.
-          </p>
-        </div>
-      </article>
+        <article class="team-member">
+          <figure>
+            <img
+              src="karabo.jpg"
+              alt="Karabo Mgwenya, Full Stack Developer"
+              width="300"
+              height="300"
+            />
+            <figcaption style="text-align: center; margin-top: 5px">
+              Karabo Mgwenya
+            </figcaption>
+          </figure>
+          <div class="team-info">
+            <p>
+              <strong>Karabo Mgwenya - Full Stack Developer</strong><br/>
+              Karabo leads our full stack development with expertise in both
+              frontend and backend technologies.<br />
+              Skilled in JavaScript, Python, and database management.<br />
+              Ensures seamless integration between user interface and server-side
+              functionality.
+            </p>
+          </div>
+        </article>
+      </section>
 
-      <article class="team-member">
-        <figure>
-          <img
-            src="nigel.jpg"
-            alt="Nigel Qongo, Frontend Lead"
-            width="300"
-            height="300"
-          />
-          <figcaption style="text-align: center; margin-top: 5px">
-            Nigel Qango
-          </figcaption>
-        </figure>
-        <div class="team-info">
-          <p>
-            <strong>Nigel Qongo - Frontend Lead</strong><br />
-            Nigel specializes in creating intuitive and responsive user
-            interfaces.<br />
-            Expert in HTML, CSS, and modern frontend frameworks.<br />
-            Focuses on delivering exceptional user experiences across all
-            devices.
-          </p>
-        </div>
-      </article>
 
-      <article class="team-member">
-        <figure>
-          <img
-            src="karabo.jpg"
-            alt="Karabo Mgwenya, Full Stack Developer"
-            width="300"
-            height="300"
-          />
-          <figcaption style="text-align: center; margin-top: 5px">
-            Karabo Mgwenya
-          </figcaption>
-        </figure>
-        <div class="team-info">
-          <p>
-            <strong>Karabo Mgwenya - Full Stack Developer</strong><br />
-            Karabo leads our full stack development with expertise in both
-            frontend and backend technologies.<br />
-            Skilled in JavaScript, Python, and database management.<br />
-            Ensures seamless integration between user interface and server-side
-            functionality.
-          </p>
-        </div>
-      </article>
+        <h2>Here is some more suff about us</h2>
+        <p class="intro">
+          We are a diverse group of students who are passionate about making
+          student life better.<br />Here's who we are:
+
+      <div class="Reel_container">
+        <section id="reel">
+          <iframe
+            src="https://www.instagram.com/reel/DHyfAkONjN0/embed"
+            loading="lazy"
+            title="Instagram reel 1"
+          >
+          </iframe>
+        </section>
+
+        <section id="reel">
+          <iframe
+            src="https://www.instagram.com/reel/DFsXmMkITv1/embed"
+            loading="lazy"
+            title="Instagram reel 2"
+          >
+          </iframe>
+        </section>
+      </div>
+      <section>
+        <h2 >Here is some more information</h2>
+        <p>
+          RAGA started off as a passion project as a small Instagram page called
+          RU.thriftyy, it then transformed into a Web development project for
+          The Data Mavericks's project for their Web Dev class for 2026. the
+          inspiration of the design of this page is simply for us by us, the
+          youth, the young at heart who are driven to get the bag and get their
+          degree at the same time. This project then became a passion project
+          driven by hunger, drive and commitment. In all honesty, the job market
+          is literally cooked, and the only way to get a job in the Computer
+          Science space is creativity, innovativity and a ton of luck, sprinkled
+          by heart stopping amounts of caffeine and a dab of blood, sweat,
+          tears, sacrifices and more. This website is meant to encompass the
+          pinnacle of the Data Maverick's creativity.
+        </p>
+        <br />
+        <p>
+          We Hope you enjoy using this website, half as much as we the devs did
+          creating it!
+        </p>
+      </section>
+
+
+        </p>
+
     </section>
 
 
