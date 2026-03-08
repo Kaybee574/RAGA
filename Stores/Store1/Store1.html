@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../../category_pictures/textbooks.css">
-        <link rel="stylesheet" href="../../mainCss.css">
-        <link rel="stylesheet" href="../../GlobalHeader.css">
-    
+    <link rel="stylesheet" href="../../category_pictures/textbooks.css">
+    <link rel="stylesheet" href="../../mainCss.css">
+    <link rel="stylesheet" href="../../GlobalHeader.css">
     <style>        
         .Profile
         {
@@ -49,11 +48,136 @@
             border: 2px solid black;
             padding: 5px;
         }
-        .mycontent
-        {
-            padding: 30px;
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .Profile {
+            max-width: 100%;
+            height: auto;
+            width: 350px; 
+        }
+        .headSection {
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .headSection section {
+            max-width: 100%;
+            word-wrap: break-word;
+        }
+        .shopItems {
+            max-width: 100%;
+            width: auto;
+            box-sizing: border-box;
         }
         
+        .shopItems img {
+            max-width: 100%;
+            height: auto;
+        }
+        .shopItems div div {
+            white-space: normal;
+            word-wrap: break-word;
+            text-align: center;
+        }
+        h1 {
+            font-size: clamp(1.5rem, 5vw, 2rem);
+        }
+        
+        h3 {
+            font-size: clamp(1rem, 4vw, 1.17rem);
+        }
+        
+        p {
+            font-size: clamp(1rem, 3.5vw, 1.2rem);
+        }
+        
+        /* Media queries for different screen sizes */
+        @media screen and (max-width: 768px) {
+            .headSection {
+                flex-direction: column-reverse;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .headSection section {
+                width: 100%;
+            }
+            
+            .Profile {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .rating {
+                width: 100%;
+                box-sizing: border-box;
+            }
+            
+            .mainSection {
+                width: 100%;
+                box-sizing: border-box;
+            }
+            
+            .shopItems 
+            {
+                margin: 0 auto;
+                width: fit-content;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .Profile {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .headSection {
+                padding: 15px;
+            }
+            
+            .shopItems {
+                padding: 15px;
+            }
+            
+            .shopItems img {
+                width: 150px;
+            }
+            .mycontent, .headSection, .mainSection {
+                width: 100%;
+                overflow-x: hidden;
+                box-sizing: border-box;
+            }
+            
+            body {
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
+            }
+            
+            main {
+                width: 100%;
+                overflow-x: hidden;
+            }
+        }
+        .shopItems div {
+            width: 100%;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        
+        /* Make sure content doesn't overflow */
+        .mycontent {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        .mainSection1
+        {
+            display: grid;
+            justify-content: left;
+        }
     </style>    
     
 </head>
@@ -115,34 +239,33 @@
                 </section>
 
                 <section>
-                    <img src = "81l+dM2lC8L._SY466_.jpg" class="Profile"></section>
+                    <img src = "81l+dM2lC8L._SY466_.jpg" class="Profile">
                 </section>
             </section>
             <br>
-        <section class="mycontent">
+            <section class="mycontent">
                 <h1>What People Saying about this shop</h1>
                 <section class="rating">
                     <p>This Store Saved my life, I was needing a book and they delivered</p>
                 </section><br>
 
                 <section class = "mainSection">
-                <h1>Shop</h1>
-                <section class="mainSection">
+                    <h1>Shop</h1>
 
-                    <a href="../../category_pictures/Books/48Laws.html">
-                        <section class="shopItems">
-                            <img src="../../category_pictures/Books/Book1.webp" alt=""><br>
-                            <div>
-                                <div>48 Laws of Power For R200<div>
-                            </div>
-                        </section>
-                    </a>
-                </section>   
-            </section>    
-        </section>  
-    </section>
-    </section>
-                  
-    <body>    
+                    <section class="mainSection1">
+                        <a href="../../category_pictures/Books/48Laws.html"> 
+                            <section class="shopItems">
+                                <img src="../../category_pictures/Books/Book1.webp" alt=""><br>
+                                <div>
+                                    <div>48 Laws of Power For R200</div>
+                                </div>
+                            </section>
+                        </a>
+                    </section>   
+                </section>    
+            </section>  
+        </section>
+    </body>    
 </main>
+</html>
 </html>
