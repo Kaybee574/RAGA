@@ -3,19 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../category_pictures/textbooks.css">
+    <link rel="stylesheet" href="../../mainCss.css">
+    <link rel="stylesheet" href="../../GlobalHeader.css">
+
+
     <style>
         .Profile
         {
             border-radius: 50%;
             border: 2px solid black;
             height: 350px;
-            width: 350px;}
+            width: 350px;
+        }
 
         .headSection
         {
+            display: flex;
             border: 2px solid black;
-            padding: 5px;
-            background-image: url("images.jpg");
+            padding: 10px;
+            justify-content: right;
+            
         }
 
         .mainSection
@@ -47,11 +55,63 @@
     </style>    
     
 </head>
-      
+  
 <main>
+        <header>
+            <div class="myFoot">
+                <div class="top">
+                    <h3>Raga</h3>
+                    <input type="text" placeholder="Looking for..." class="search-input">
+                    <button class="search-button">Go</button>
+                    <a href="../Cart.html"><img class="icon" src="../../Icons/shopping-cart.png" alt="Shopping cart"></a>
+                </div>
+
+                <div class="bottom">
+                    <section class="links">
+                        <a href="../home.html" target="mainFrame">Home</a>
+                    </section>
+                    <section class="links">
+                        <a href="../AboutUs.html" target="mainFrame">About Us</a>
+                    </section>
+                    <section class="links">
+                        <a href="../sell.html" target="mainFrame">Sell</a>
+                    </section>
+                    <section class="links">
+                        <a href="../Categories.html" target="mainFrame">Categories</a>
+                    </section>
+                    <section class="links">
+                        <a href="../Explore.html" target="mainFrame">Explore</a>
+                    </section>
+                    <section class="links">
+                        <a href="../Reviews.html" target="mainFrame">User reviews</a>            
+                    </section>
+                    <section class="links">
+                        <a href="../SignIn.html" target="mainFrame">Sign In</a>
+                    </section>
+                    <section class="links">
+                        <a href="../SignUp.html" target="mainFrame">Sign Up</a>
+                    </section>                
+                </div>
+            </div>
+        </header>    
+
     <body>
-        <section class="headSection">
-            <img src = "81l+dM2lC8L._SY466_.jpg" class="Profile"></section>
+        <section class="headSection"> 
+            <section>
+                <h1 id="shopName">God's Hands Books</h1>
+                <h3 id="shopLocation">Joe Slovo</h3>
+                <h3 id="sellingSince">Selling Since 08/03/2026</h3>
+                <h3 id="rating">Rating</h3>
+                <h3 id="aboutUs">About Us</h3>
+                
+                <p >
+                    We are A shop that sells second hand Books to students of Rhodes university, we are based at Hilltop 8 and we deliver anywhere with a service fee of R50. see out products below 
+                </p>
+            </section>
+
+            <section>
+                <img src = "81l+dM2lC8L._SY466_.jpg" class="Profile"></section>
+            </section>
         </section><br>
         <h1>What People Saying about this shop</h1>
         <section class="rating">
@@ -59,21 +119,17 @@
         </section><br>
 
         <section class = "mainSection">
-            <h1>God's Hands Books</h1> 
-            <section>
-                <h3>About Us</h3>
-                <p >
-                    We are A shop that sells second hand Books to students of Rhodes university, we are based at Hilltop 8 and we deliver anywhere with a service fee of R50. see out products below 
-                </p>
         <h1>Shop</h1>
         <section class="mainSection">
-            <section class="shopItems">
-                <img src="\\ict.ru.ac.za\DFS\UGHomes\g23q5008\Desktop\PROJECT\category_pictures\Books\Book1.webp" alt=""><br>
-                <div>
-                    <div><a href="\\ict.ru.ac.za\DFS\UGHomes\g23q5008\Desktop\PROJECT\category_pictures\Books\48Laws.html">48 Laws of Power For R200</a><div>
-                    
-                </div>
-            </section>
+
+            <a href="../../category_pictures/Books/48Laws.html">
+                <section class="shopItems">
+                    <img src="../../category_pictures/Books/Book1.webp" alt=""><br>
+                    <div>
+                        <div>48 Laws of Power For R200<div>
+                    </div>
+                </section>
+            </a>
             
         </section>   
 
