@@ -11,14 +11,13 @@ const images = [
     "WelcomePictures/hello2.jpg",
 ];
 
-// THis proovides some dynamicity for the front page, it displays welcome pictures for different users by simply using random
+// THis proovides some "dynamicity" for the front page, it displays welcome pictures for different users by simply using random
 //let index = 0;
 let index = Math.floor(Math.random() * 9) + 1;
 
 function changeBackground() 
 {
     document.body.style.backgroundImage = `url(${images[index]})`;
-
     index++;
 
     if (index >= images.length) 

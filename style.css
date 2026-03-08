@@ -1,25 +1,8 @@
-/* ============================================
-   Web Technologies & Security - Practical 2
-   CSS Stylesheet for RAGA Inc.
-   Author: The Data Mavericks Team
-   Date: October 2025
-   
-   This stylesheet meets all CSS practical requirements:
-   - No frameworks used (pure CSS)
-   - Responsive design with media queries
-   - Flexbox for forms
-   - Dropdown menus
-   - Navigation styling
-   - CSS Layout attributes (float, clear)
-   - Multi-column layout
-   ============================================ */
 
-/* ---------- RESET & BASE STYLES ---------- */
-/* CSS Reset - ensures consistency across browsers */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* CSS3 property - creative addition */
+  box-sizing: border-box; 
 }
 
 /* ---------- COLOR PALETTE (5+ colors as required) ---------- */
@@ -33,8 +16,6 @@
   --success: #4caf50;       /* Green - Success messages */
   --error: #f44336;         /* Red - Error messages */
 }
-
-/* ---------- TYPOGRAPHY (4+ styles as required) ---------- */
 body {
   font-family: 'Cambria', 'Cochin', 'Georgia', 'Times New Roman', serif;
   color: var(--dark);
@@ -677,7 +658,7 @@ button:hover {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* 3. CSS Gradients */
+
 .gradient-bg {
   background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
   color: var(--white);
@@ -685,7 +666,7 @@ button:hover {
   border-radius: 8px;
 }
 
-/* 4. CSS Filters */
+
 .filter-demo img {
   filter: grayscale(50%) brightness(1.1);
   transition: filter 0.3s;
@@ -695,9 +676,6 @@ button:hover {
   filter: grayscale(0%) brightness(1);
 }
 
-/* 5. CSS Custom Properties (already using :root) */
-
-/* ---------- PRINT STYLES (Media query for different medium) ---------- */
 @media print {
   .main-nav,
   .social-links,
