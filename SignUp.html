@@ -4,8 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Up - RAGA Inc</title>
-    <!-- External CSS 
-    <link rel="stylesheet" href="style.css" /> -->
 
     <style>
       form {
@@ -87,6 +85,44 @@
         display: flex;
         justify-content: center;
       }
+
+      /* Password input box styling */
+      .password-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        max-width: 400px;
+        width: 100%;
+      }
+
+      .password-wrapper input {
+        padding-right: 40px;
+      }
+
+      .toggle-password {
+        position: absolute;
+        right: 12px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+      }
+
+      .toggle-password img {
+        width: 24px;
+        height: 24px;
+        opacity: 0.7;
+        transition: opacity 0.2s ease;
+      }
+
+      .toggle-password:hover img {
+        opacity: 1;
+      }
     </style>
   </head>
   <body>
@@ -110,50 +146,54 @@
         <br />
         <div class="formrow">
           <label for="user_type">I want to:</label><br />
-          <select name="user_type" id="user_type" onchange="toggleFields()" required>
+          <select
+            name="user_type"
+            id="user_type"
+            onchange="toggleFields()"
+            required
+          >
             <option value="">-- Select account type --</option>
             <option value="buyer">Buy items (Buyer)</option>
             <option value="seller">Sell items (Seller)</option>
-            <option value="both">Both buy and sell</option>
           </select>
         </div>
         <br />
-        
-        <div id="seller_fields" style="display: none;">
-            <div class="formrow">
-              <label for="email">Email:</label> <br />
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="username@campus.ru.ac.za"
-              />
-            </div>
-            <br />
-            
-            <div class="formrow">
-              <label for="contact_number">Contact Number:</label> <br />
-              <input
-                type="text"
-                id="contact_number"
-                name="contact_number"
-                placeholder="0810000000"
-              />
-            </div>
-            <br />
+
+        <div id="seller_fields" style="display: none">
+          <div class="formrow">
+            <label for="email">Email:</label> <br />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="username@campus.ru.ac.za"
+            />
+          </div>
+          <br />
+
+          <div class="formrow">
+            <label for="contact_number">Contact Number:</label> <br />
+            <input
+              type="text"
+              id="contact_number"
+              name="contact_number"
+              placeholder="0810000000"
+            />
+          </div>
+          <br />
         </div>
 
-        <div id="buyer_fields" style="display: none;">
-            <div class="formrow">
-              <label for="student_number">Student Number:</label> <br />
-              <input
-                type="text"
-                id="student_number"
-                name="student_number"
-                placeholder="e.g. g23x0000"
-              />
-            </div>
-            <br />
+        <div id="buyer_fields" style="display: none">
+          <div class="formrow">
+            <label for="student_number">Student Number:</label> <br />
+            <input
+              type="text"
+              id="student_number"
+              name="student_number"
+              placeholder="e.g. g23x0000"
+            />
+          </div>
+          <br />
         </div>
 
         <div class="formrow">
@@ -169,31 +209,55 @@
         <br />
         <div class="formrow">
           <label for="password">Password:</label><br />
-          <input
-            type="password"
-            id="password"
-            name="password"
-            minlength="8"
-            maxlength="16"
-            required
-            pattern="(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9]{8,16}"
-            title="Password must be 8-16 characters, contain at least one uppercase letter and one number"
-            placeholder="Enter password"
-          />
+          <div class="password-wrapper">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              minlength="8"
+              maxlength="16"
+              required
+              pattern="(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9]{8,16}"
+              title="Password must be 8-16 characters, contain at least one uppercase letter and one number"
+              placeholder="Enter password"
+            />
+            <button
+              type="button"
+              class="toggle-password"
+              onclick="togglePasswordVisibility('password')"
+            >
+              <img
+                id="password-toggle-icon"
+                src="hide.png"
+                alt="Hide password"
+              />
+            </button>
+          </div>
         </div>
 
         <div class="formrow">
           <label for="confirm_password">Confirm Password:</label><br />
-          <input
-            type="password"
-            id="confirm_password"
-            name="confirm_password"
-            placeholder="Re-enter password"
-            required
-          />
+          <div class="password-wrapper">
+            <input
+              type="password"
+              id="confirm_password"
+              name="confirm_password"
+              placeholder="Re-enter password"
+              required
+            />
+            <button
+              type="button"
+              class="toggle-password"
+              onclick="togglePasswordVisibility('confirm_password')"
+            >
+              <img
+                id="confirm-password-toggle-icon"
+                src="hide.png"
+                alt="Hide password"
+              />
+            </button>
+          </div>
         </div>
-
-
 
         <div class="formrow" style="justify-content: flex-start">
           <br />
@@ -221,37 +285,54 @@
         <p><a href="forgot_password.html">Forgot Password?</a></p>
       </div>
     </div>
-    
+
     <script>
+      /* Password visibility toggle */
+      function togglePasswordVisibility(fieldId) {
+        const input = document.getElementById(fieldId);
+        const button = input.parentElement.querySelector(".toggle-password");
+        const img = button.querySelector("img");
+
+        if (input.type === "password") {
+          input.type = "text";
+          img.src = "eye.png";
+          img.alt = "Hide password";
+        } else {
+          input.type = "password";
+          img.src = "hide.png";
+          img.alt = "Hide password";
+        }
+      }
+
       function toggleFields() {
-        const type = document.getElementById('user_type').value;
-        const buyerFields = document.getElementById('buyer_fields');
-        const sellerFields = document.getElementById('seller_fields');
-        const emailInput = document.getElementById('email');
-        const studentNumberInput = document.getElementById('student_number');
-        
-        if (type === 'buyer') {
-          buyerFields.style.display = 'block';
-          sellerFields.style.display = 'none';
-          
+        const type = document.getElementById("user_type").value;
+        const buyerFields = document.getElementById("buyer_fields");
+        const sellerFields = document.getElementById("seller_fields");
+        const emailInput = document.getElementById("email");
+        const studentNumberInput = document.getElementById("student_number");
+
+        if (type === "buyer") {
+          buyerFields.style.display = "block";
+          sellerFields.style.display = "none";
+
           studentNumberInput.required = true;
           emailInput.required = false;
-        } else if (type === 'seller') {
-          buyerFields.style.display = 'none';
-          sellerFields.style.display = 'block';
-          
+        } else if (type === "seller") {
+          buyerFields.style.display = "none";
+          sellerFields.style.display = "block";
+
           studentNumberInput.required = false;
           emailInput.required = true;
-        } else if (type === 'both') {
-          buyerFields.style.display = 'block';
-          sellerFields.style.display = 'block';
-          
+        } else if (type === "both") {
+          buyerFields.style.display = "block";
+          sellerFields.style.display = "block";
+
           studentNumberInput.required = true;
           emailInput.required = true;
         } else {
-          buyerFields.style.display = 'none';
-          sellerFields.style.display = 'none';
-          
+          buyerFields.style.display = "none";
+          sellerFields.style.display = "none";
+
           studentNumberInput.required = false;
           emailInput.required = false;
         }
