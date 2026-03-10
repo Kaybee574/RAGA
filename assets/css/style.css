@@ -1,0 +1,269 @@
+/**
+ * Raga Marketplace - Minimalist Editorial Design System
+ * Inspired by high-fashion editorial layouts (MANCLUB style).
+ */
+:root {
+    --primary: #000000;
+    --secondary: #666666;
+    --background: #ffffff;
+    --surface: #ffffff;
+    --border: #000000;
+    --text: #000000;
+    --text-muted: #888888;
+    --radius-pill: 50px;
+    --radius-small: 0px; /* Flat editorial style */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase; /* Editorial feel */
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+/* Header & Navigation */
+header {
+    background-color: var(--background);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 4%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: var(--primary);
+    text-decoration: none;
+    letter-spacing: -1px;
+    font-style: italic;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--text-muted);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.btn {
+    padding: 0.8rem 2rem;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.7rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    letter-spacing: 2px;
+}
+
+.btn-primary {
+    border-radius: var(--radius-pill);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+/* Hero Section - High Headline focus */
+.hero-editorial {
+    padding: 8rem 2rem;
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.hero-editorial h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 1.1;
+    font-weight: 400;
+    margin-bottom: 3rem;
+    letter-spacing: -0.02em;
+}
+
+/* Grid Layout */
+.container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.grid-editorial {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-top: 1px solid var(--border);
+}
+
+.grid-item {
+    position: relative;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+    height: 70vh;
+    text-decoration: none;
+    color: inherit;
+}
+
+.grid-item:nth-child(2n) {
+    border-right: none;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.grid-item:hover img {
+    transform: scale(1.05);
+}
+
+.grid-tag {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1;
+    max-width: 200px;
+}
+
+.grid-price {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-weight: 700;
+}
+
+/* Category Sections */
+.category-row {
+    display: flex;
+    border-bottom: 1px solid var(--border);
+}
+
+.cat-box {
+    flex: 1;
+    border-right: 1px solid var(--border);
+    padding: 4rem 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 60vh;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+}
+
+.cat-box:last-child {
+    border-right: none;
+}
+
+.cat-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.cat-label {
+    position: relative;
+    z-index: 1;
+    font-size: 1.2rem;
+    font-weight: 900;
+    margin-top: auto;
+    text-align: left;
+}
+
+/* Forms & Panels */
+.auth-container {
+    max-width: 500px;
+    margin: 6rem auto;
+    padding: 0 2rem;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 0;
+    font-size: 1rem;
+    outline: none;
+}
+
+/* Specific Page Overrides */
+.product-details-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+}
+
+.product-image-panel {
+    border-right: 1px solid var(--border);
+}
+
+.product-info-panel {
+    padding: 4rem;
+}
+
+.product-info-panel h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+    padding: 4rem 4%;
+    text-align: center;
+    border-top: 1px solid var(--border);
+}
